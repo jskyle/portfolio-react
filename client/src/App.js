@@ -13,6 +13,7 @@ function App() {
       <div>
         <Navigation/>
       </div>
+      <div className="container">
         <Switch>
           <Route path="/"><Home/></Route>
           <Route path="/my-blog"></Route>
@@ -21,6 +22,7 @@ function App() {
           <Route path="/admin-page"></Route>
           <Route path="/case-study"></Route>
         </Switch>
+      </div>
       <footer>
       </footer>
     </Router>

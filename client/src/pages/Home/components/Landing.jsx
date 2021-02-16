@@ -10,6 +10,7 @@ const Landing = (props) => {
       <div id="landing-container">
         <div id="main-title-container">
           <h1>{main}</h1>
+          <h6>{secondary}</h6>
         </div>
       </div>
     </section>

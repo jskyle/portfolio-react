@@ -1,34 +1,60 @@
-.App 
-  text-align: center
+// main page container
+
+.left
+    position: relative
+
+.left:before 
+  content: ""
+  position: absolute
+  width: 0
+  height: 3px
+  bottom: 0
+  left: 0
+  background-color: #000000
+  visibility: hidden
+  transition: all 0.3s ease-in-out
+
+.left:hover:before 
+  visibility: visible
+  width: 100%
 
 
-.App-logo 
-  height: 40vmin
-  pointer-events: none
+.container
+  width: 50%
+  max-width: 900px
+  margin: 0 auto
+  max-width: 900px
 
+.section-container
+  margin-bottom: 10rem
 
-@media (prefers-reduced-motion: no-preference) 
-  .App-logo 
-    animation: App-logo-spin infinite 20s linear;
-  
+.section-head
+  font-size: 4rem
+  letter-spacing: -0.1rem
+  margin-bottom: 0rem
 
-.App-header 
-  background-color: #282c34
-  min-height: 100vh
-  display: flex
-  flex-direction: column
-  align-items: center
-  justify-content: center
-  font-size: calc(10px + 2vmin)
-  color: white
+// Font standards
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button
+  font-family: 'Manrope', sans-serif
+  color: #000000
+ 
+h1,
+h4,
+.nav-link
+  font-weight: 800
 
+h5,
+h6,
+p
+  font-weight: 500
 
-.App-link 
-  color: #61dafb
-
-
-@keyframes App-logo-spin 
-  from 
-    transform: rotate(0deg)
-  to 
-    transform: rotate(360deg)
+a
+  text-decoration: none

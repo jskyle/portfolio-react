@@ -7,11 +7,11 @@ const Navigation = () => {
   return (
     <nav>
       <ul>
-        <li><Link to="/#about">about</Link></li>
-        <li><Link to="/#work">work</Link></li>
-        <li><Link to="/#skills">skills</Link></li>
-        <li><Link to="/my-blog">blog</Link></li>
-        <li><Link to="/#contact">contact</Link></li>
+        <li><Link className="nav-link left" to="/#about">about</Link></li>
+        <li><Link className="nav-link left" to="/#work">work</Link></li>
+        <li><Link className="nav-link left" to="/#skills">skills</Link></li>
+        <li><Link className="nav-link left" to="/my-blog">blog</Link></li>
+        <li><Link className="nav-link left" to="/#contact">contact</Link></li>
       </ul>
     </nav>
   )
