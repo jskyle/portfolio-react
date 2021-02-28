@@ -1,6 +1,8 @@
 import React from 'react'
 import './styles/Landing.sass';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { Spring } from 'react-spring/renderprops'
+
 
 const Landing = (props) => {
   const { main, secondary } = props;
