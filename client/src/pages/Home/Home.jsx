@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from "react-router-dom"
 import { Work, Skills, Connect } from "./components/index";
 import { Landing, TextSection } from "../../shared"
+import axios from "axios";
 
 const Home = (props) => {
 
   props.setHomeNav(true)
+
+  useEffect(() => {
+    axios.get('/api/hello').then(res => console.log(res.data)).catch(() => console.log("error"))
+  }, [])
+
   return (
     <div>
       <Landing type="home">
