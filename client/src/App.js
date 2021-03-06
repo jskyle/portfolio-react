@@ -19,16 +19,16 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Navigation type={navType}/>
+        <Navigation type={navType} />
       </div>
       <div className="container">
         <Switch>
-          <Route path="/case-study/:id"><CaseStudy setHomeNav={setNavType}/></Route>
-          <Route path="/my-blog"><Blog setHomeNav={setNavType}/></Route>
-          <Route path="/blog-post/:id"><BlogPost/></Route>
-          <Route path="/user-login"><Login/></Route>
+          <Route path="/case-study/:id"><CaseStudy setHomeNav={setNavType} /></Route>
+          <Route path="/my-blog"><Blog setHomeNav={setNavType} /></Route>
+          <Route path="/blog-post/:id"><BlogPost /></Route>
+          <Route path="/user-login"><Login /></Route>
           <Route path="/admin-page"></Route>
-          <Route path="/"><Home setHomeNav={setNavType}/></Route>
+          <Route path="/"><Home setHomeNav={setNavType} /></Route>
         </Switch>
       </div>
       <footer>
