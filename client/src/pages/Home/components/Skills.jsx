@@ -1,45 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles/Skills.sass';
 import SkillsCard from './SkillsCard';
+import { frontEnd, backEnd, devOps, design } from "./utils";
 
 const Skills = ({ children }) => {
+  const [ skillsContent, setSkillsContent ] = useState(null);
 
-
-  const frontEnd = {
-    title: "Front End",
-    lists: [
-      {
-        title: "Javascript",
-        items: [
-          "React",
-          "Angular",
-          "Jest",
-          "Redux",
-          "ES6 / ES7",
-          "Typescript",
-        ],
-      },
-      {
-        title: "CSS",
-        items: [
-          "SASS / LESS",
-          "Bootstrap",
-          "Foundation",
-          "Semantic UI",
-          "Materialize",
-        ],
-      },
-      {
-        title: "Tools",
-        items: [
-          "CLI",
-          "Git",
-          "Websocket",
-          "Webpack",
-        ],
-      },
-    ]
-  }
 
   return (
     <>
@@ -48,10 +14,15 @@ const Skills = ({ children }) => {
         <h4 className="section-head">skills</h4>
       </div>
       <div id="skills-body">
-        {children}
+          <div id="skills-list-container">
+            <button className="skills-button left" onClick={() => setSkillsContent(frontEnd)}>Front End</button>
+            <button className="skills-button left" onClick={() => setSkillsContent(backEnd)}>Back End</button>
+            <button className="skills-button left" onClick={() => setSkillsContent(devOps)}>Dev Ops</button>
+            <button className="skills-button left" onClick={() => setSkillsContent(design)}>Design</button>
+          </div>
       </div>
     </div>
-      <SkillsCard content={frontEnd}/>
+      <SkillsCard content={skillsContent} setContent={setSkillsContent} />
     </>
   )
 }

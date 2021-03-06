@@ -1,24 +1,59 @@
+.active 
+  text-decoration: underline
+  
 nav
-  position: fixed
   top: 0
   left: 0
   width: 100%
   display: flex
-  justify-content: center
   z-index: 2
   background-color: #ffffff
+  align-items: center
   
 li 
   width: fit-content
   text-decoration: none
 
-a 
-  letter-spacing: -0.25px
-
-// add media queries for width
 ul
   display: flex
   justify-content: space-evenly
-  width: 50%
   list-style: none
   padding-left: 0px
+
+a 
+  text-decoration: none
+  letter-spacing: -0.25px
+
+// add media queries for width
+
+
+.primary
+  position: fixed
+  justify-content: center
+
+  ul
+    width: 50%
+
+  .secondary-title
+    display: none
+
+.secondary
+  position: absolute
+  justify-content: space-between
+
+  li
+    padding-left: 4rem
+
+  .secondary-title
+    width: min-content
+    font-size: 2.5rem
+    font-weight: 800
+    line-height: 0.9
+    margin-top: 1rem
+    margin-bottom: 1rem
+    letter-spacing: -0.1rem
+    padding-left: 1rem
+
+  ul
+    padding-right: 1rem
+    width: fit-content

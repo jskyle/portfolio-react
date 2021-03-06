@@ -3,20 +3,18 @@ import './styles/SkillsCard.sass';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const SkillsCard = ({ content }) => {
-
-  const {title, lists} = content;
+const SkillsCard = ({ content, setContent }) => {
 
   return (
-    <div className="skills-card-container">
+    <div className="skills-card-container" style={{display: content ? "" : "none" }}>
       <div id="skills-card-head">
-        <h1 className="skills-card-title">{title}</h1>
-        <button className="close-button">
+        <h1 className="skills-card-title">{content?.title || ""}</h1>
+        <button className="close-button" onClick={() => setContent(null)}>
           <FontAwesomeIcon icon={faTimes} color="white"/>
         </button>
       </div>
       <div id="skills-card-body">
-        {lists.map((list, idx) => {
+        {content?.lists.map((list, idx) => {
           return (
             <div classNam="skill-list-container" key="idx">
               <h4 className="skill-list-title">{list.title}</h4>

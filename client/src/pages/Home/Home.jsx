@@ -1,51 +1,46 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { Landing, About, Work, Skills, Contact } from "./components/index";
+import { Link } from "react-router-dom"
+import { Work, Skills, Connect } from "./components/index";
+import { Landing, TextSection } from "../../shared"
 
 const Home = (props) => {
+
+  props.setHomeNav(true)
   return (
     <div>
-      <Landing main="Kyle Kearney" secondary="web developer and digitial creator"/>
-      <About>
+      <Landing type="home">
+        <h1>Kyle Kearney</h1>
+        <h6>front end web developer</h6>
+      </Landing>
+      <TextSection title="about">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </About>
+      </TextSection>
       <Work>
         <ul id="case-study-links-container">
           <li className="case-study-links">
-            <a className="left" href="http://google.com">Light Nostalgia</a>
+            <Link className="left" to="/case-study/1">Light Nostalgia</Link>
           </li>
           <li className="case-study-links">
-            <a className="left" href="http://google.com">Pom</a>
+            <Link className="left" to="/case-study/2">Pom</Link>
           </li>
           <li className="case-study-links">
-            <a className="left" href="http://google.com">Luca</a>
+            <Link className="left" to="/case-study/3">Luca</Link>
           </li>
           <li className="case-study-links">
-            <a className="left" href="http://google.com">Posh Photo</a>
+            <Link className="left" to="/case-study/4">Posh Photo</Link>
           </li>
           <li className="case-study-links">
-            <a className="left" href="http://google.com">Personal Blog</a>
+            <Link className="left" to="/case-study/5">Personal Blog</Link>
           </li>
 
         </ul>
       </Work>
-      <Skills>
-        <div id="skills-list-container">
-          <button className="skills-button left">Front End</button>
-          <button className="skills-button left">Back End</button>
-          <button className="skills-button left">Dev Ops</button>
-          <button className="skills-button left">Design</button>
-        </div>
-      </Skills>
-      <Contact/>
+      <Skills/>
+      <Connect/>
     </div>
   )
-}
-
-Home.propTypes = {
-
 }
 
 export default Home
