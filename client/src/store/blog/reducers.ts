@@ -12,9 +12,23 @@ const reducer = produce<any>((base: any, action: any) => {
       base.posts = action.payload;
       break;
     }
+    case actions.CREATE_POST: {
+      const { payload } = action;
+      base.posts = {
+        ...base.posts, payload
+      }
+      break;
+    }
+    case actions.UPDATE_POST: {
+
+      break;
+    }
     case actions.REMOVE_DB_POSTS: {
       base.posts = {};
       break;
+    }
+    default: {
+      return initialState;
     }
   }
 }, initialState);

@@ -12,6 +12,7 @@ import CaseStudy from "./pages/CaseStudy/CaseStudy"
 import Blog from "./pages/Blog/Blog"
 import BlogPost from "./pages/Blog/BlogPost/BlogPost"
 import Login from "./pages/Login/Login"
+import PostEditor from "./pages/Admin/PostEditor/PostEditor";
 
 const App = () => {
   const [navType, setNavType] = useState(false);
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/case-study/:id"><CaseStudy setHomeNav={setNavType} /></Route>
           <Route path="/my-blog"><Blog setHomeNav={setNavType} /></Route>
           <Route path="/blog-post/:id"><BlogPost /></Route>
+          <Route path="/create-post/"><PostEditor /></Route>
           <Route path="/user-login"><Login /></Route>
           <Route path="/admin-page"></Route>
           <Route path="/"><Home setHomeNav={setNavType} /></Route>
