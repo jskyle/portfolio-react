@@ -9,6 +9,7 @@ nav
   z-index: 2
   background-color: #ffffff
   align-items: center
+  font-size: 1.3rem
   
 li 
   width: fit-content
@@ -23,8 +24,23 @@ ul
 a 
   text-decoration: none
   letter-spacing: -0.25px
+  &:hover
+    color: black
+    text-decoration: none
 
 // add media queries for width
+
+#contact-tooltip
+  background-color: #ffffff
+  font-family: 'Manrope', sans-serif
+  font-size: 1.2rem
+
+  ul
+    display: flex
+    flex-direction: column
+
+  .contact-tooltip-item
+    color: black
 
 
 .primary
@@ -45,7 +61,7 @@ a
     padding-left: 4rem
 
   .secondary-title
-    width: min-content
+    width: fir-content
     font-size: 2.5rem
     font-weight: 800
     line-height: 0.9

@@ -63,58 +63,23 @@ const Connect = (props) => {
         <Row className="w-100">
           <Form id="connect-form">
             <Row>
-              <Col xl={6} md={6}>
+              <Col>
                 <FormGroup>
-                  <Label for="connect-form-name-input" className="connect-form-input-label">name</Label>
-                  <Input type="text" name="name" id="connect-form-name-input" placeholder="Super Awesome Person" value={formState.name} onChange={(value) => setFormState({...formState, name: value})} />
+                  {/* <Label for="connect-form-name-input" className="connect-form-input-label">name</Label> */}
+                  <Input type="text" name="name" className="connect-form-input" id="connect-form-name-input" placeholder="Your Name" value={formState.name} onChange={(value) => setFormState({...formState, name: value})} />
                 </FormGroup>
                 <FormGroup>
-                  <legend className="col-form-label connect-form-input-label">preferred connect method</legend>
-                  <FormGroup className="connect-form-radio-options-container">
-                  <FormGroup check>
-                    <Input type="radio" name="email-option" id="connect-form-radio-email-option" className="connect-form-radio-option-label" />
-                    <Label for="connect-form-radio-email-option">email</Label>
-                  </FormGroup>
-                  <FormGroup check className="ml-4">
-                    <Input type="radio" name="phone-option" id="connect-form-radio-phone-option" className="connect-form-radio-option-label" />
-                    <Label for="connect-form-radio-phone-option">phone</Label>
-                  </FormGroup>
-                  </FormGroup>
+                  {/* <Label for="connect-form-email-input" className="connect-form-input-label">email</Label> */}
+                  <Input type="email" name="email" className="connect-form-input" id="connect-form-email-input" placeholder="Your Email" value={formState.email} onChange={(value) => setFormState({ ...formState, email: value })} />
                 </FormGroup>
                 <FormGroup>
-                  <Label for="connect-form-email-input" className="connect-form-input-label">email</Label>
-                  <Input type="email" name="name" id="connect-form-email-input" placeholder="you.are.great@gmail.com" value={formState.email} onChange={(value) => setFormState({ ...formState, email: value })} />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="connect-form-phone-input" className="connect-form-input-label" >phone</Label>
-                    <Input type="tel" name="name" id="connect-form-phone-input" placeholder="(371) 352-6526" value={formState.phone} onChange={(value) => setFormState({ ...formState, phone: value })}/>
-                </FormGroup>
-              </Col>
-              <Col xl={6} md={6}>
-                <FormGroup>
-                  <Label for="connect-form-message-area" className="connect-form-input-label">message</Label>
-                  <Input type="textarea" name="name" id="connect-form-message-area" placeholder="Once upon a time..." value={formState.message}  onChange={(value) => setFormState({ ...formState, message: value })}/>
+                  {/* <Label for="connect-form-message-area" className="connect-form-input-label">message</Label> */}
+                  <Input type="textarea" name="message" className="connect-form-input" id="connect-form-message-area" placeholder="Message" value={formState.message}  onChange={(value) => setFormState({ ...formState, message: value })}/>
                 </FormGroup>
               </Col>
             </Row>
-            <Row className="connect-form-purpose-container">
-              <Col>
-              <Row>
-                  <legend className="col-form-label connect-form-input-label">purpose</legend>
-              </Row>
-              </Col>
-              <Col>
-                <Row className="connect-form-purposes-row">
-                  {buttonOptions.map((e) => (
-                    <Button onClick={() => setFormState({...formState, purpose: e.value})}>
-                      {e.label}
-                    </Button>
-                  ))}
-                </Row>
-              </Col>
-            </Row>
-            <Row>
-              <Button block color="primary">Say Hi!</Button>
+            <Row className="connect-form-button-container">
+              <Button className="connect-form-button">submit</Button>
             </Row>
           </Form>
         </Row>

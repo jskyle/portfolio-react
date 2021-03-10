@@ -15,10 +15,10 @@ const Skills = ({ children }) => {
       </div>
       <div id="skills-body">
           <div id="skills-list-container">
-            <button className="skills-button left" onClick={() => setSkillsContent(frontEnd)}>Front End</button>
-            <button className="skills-button left" onClick={() => setSkillsContent(backEnd)}>Back End</button>
-            <button className="skills-button left" onClick={() => setSkillsContent(devOps)}>Dev Ops</button>
-            <button className="skills-button left" onClick={() => setSkillsContent(design)}>Design</button>
+            <button className="skills-button" onClick={() => setSkillsContent(frontEnd)}><span className="left">Front End</span></button>
+            <button className="skills-button" onClick={() => setSkillsContent(backEnd)}><span className="left">Back End</span></button>
+            <button className="skills-button" onClick={() => setSkillsContent(devOps)}><span className="left">Dev Ops</span></button>
+            <button className="skills-button" onClick={() => setSkillsContent(design)}><span className="left">Design</span></button>
           </div>
       </div>
     </div>

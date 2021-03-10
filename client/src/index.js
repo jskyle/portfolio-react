@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.sass';
+import '@draft-js-plugins/inline-toolbar/lib/plugin.css'
 import App from './App';
 import store from './store/store';
 import { Provider } from 'react-redux';
