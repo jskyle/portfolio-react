@@ -1,9 +1,41 @@
 const express = require('express');
+const env = require('dotenv');
 
 const router = express.Router();
+const nodemailer = require('nodemailer');
 const pool = require('./db');
 
+env.config();
+
+const contactEmail = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.SEND_EMAIL,
+    pass: process.env.EMAIL_PASSWORD,
+  },
+});
+
 // POSTS ROUTES
+
+router.post('/api/new/message', (req, res) => {
+  const { name } = req.body;
+  const { email } = req.body;
+  const { message } = req.body;
+  const mail = {
+    from: name,
+    to: process.env.RECIEVE_EMAIL,
+    subject: `Contact Form Message from ${name}`,
+    html: `<p>name: ${name}</p><p>email: ${email}</p><p>message: ${message}</p>`,
+  };
+
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: 'Failed' });
+    } else {
+      res.json({ status: 'Sent' });
+    }
+  });
+});
 
 router.get('/api/get/allposts', (req, res, next) => {
   pool.query('SELECT * FROM posts ORDER BY date_created DESC', (qErr, qRes) => {
