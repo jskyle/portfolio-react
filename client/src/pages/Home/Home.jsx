@@ -3,15 +3,19 @@ import { Link } from "react-router-dom"
 import { Work, Skills, Connect } from "./components/index";
 import { Landing, TextSection } from "../../shared"
 import ReactRotatingText from "react-rotating-text";
+import { useSpring, animated } from 'react-spring';
 
 const Home = (props) => {
   props.setHomeNav(true)
-
+  const [styles, set, stop] = useSpring(() => ({ opacity: 0, config: {duration: 3000}}))
   const subTitles = ["front end web developer", "software engineer", "ui engineer", "react artisan", "digital creator", "book worm", "economics enthusiast"];
 
+  set({ opacity: 1 })
+
+  stop();
 
   return (
-    <div>
+    <animated.div style={styles}>
       <Landing type="home">
         <h1>Kyle Kearney</h1>
         <h6 className="sub-header rotate-1">
@@ -26,26 +30,26 @@ const Home = (props) => {
       <Work>
         <ul id="case-study-links-container">
           <li className="case-study-links">
-            <Link to="/case-study/1"><span className="left">Light Nostalgia</span></Link>
+            <Link to="/case-study/1"><span className="left-big">Light Nostalgia</span></Link>
           </li>
           <li className="case-study-links">
-            <Link to="/case-study/2"><span className="left">Pom</span></Link>
+            <Link to="/case-study/2"><span className="left-big">Pom</span></Link>
           </li>
           <li className="case-study-links">
-            <Link to="/case-study/3"><span className="left">Luca</span></Link>
+            <Link to="/case-study/3"><span className="left-big">Luca</span></Link>
           </li>
           <li className="case-study-links">
-            <Link to="/case-study/4"><span className="left">Posh Photo</span></Link>
+            <Link to="/case-study/4"><span className="left-big">Posh Photo</span></Link>
           </li>
           <li className="case-study-links">
-            <Link to="/case-study/5"><span className="left">Personal Blog</span></Link>
+            <Link to="/case-study/5"><span className="left-big">Personal Blog</span></Link>
           </li>
 
         </ul>
       </Work>
       <Skills/>
       <Connect/>
-    </div>
+    </animated.div>
   )
 }
 

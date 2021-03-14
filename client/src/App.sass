@@ -14,6 +14,24 @@
   visibility: hidden
   transition: all 0.3s ease-in-out
 
+.left-big
+  position: relative
+
+.left-big:before
+  content: ""
+  position: absolute
+  width: 0
+  height: 4px
+  bottom: 0
+  left: 0
+  background-color: #000000
+  visibility: hidden
+  transition: all 0.4s ease-in-out
+
+.left-big:hover:before
+  visibility: visible
+  width: 100%
+
 .left:hover:before 
   visibility: visible
   width: 100%
@@ -25,6 +43,8 @@
   font-size: 4rem
   letter-spacing: -0.1rem
   margin-bottom: 0rem
+
+
 
 // Font standards
 h1,

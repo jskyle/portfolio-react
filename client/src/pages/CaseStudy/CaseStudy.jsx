@@ -1,10 +1,10 @@
 import React from 'react'
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ImageContainer, Landing, TextSection } from "../../shared";
 import { Row, Col } from "reactstrap";
 
 const CaseStudy = (props) => {
-  let { id } = useParams();
+  // let { id } = useParams();
 
   props.setHomeNav(false)
   return (

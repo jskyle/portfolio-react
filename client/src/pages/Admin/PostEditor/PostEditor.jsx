@@ -1,7 +1,6 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React from 'react';
 import "./PostEditor.sass"
 import { TextEditor } from "./components";
-import { Input, FormGroup, Button } from "reactstrap"
 
 
 const PostEditor = () => {
