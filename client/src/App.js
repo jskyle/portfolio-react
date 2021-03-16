@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import './App.sass';
-import { Navigation, Loading } from "./shared";
+import { Footer, Navigation, Loading } from "./shared";
 import {
   BrowserRouter as Router,
   Switch,
@@ -44,8 +44,7 @@ const App = () => {
             <Route path="/"><Home setHomeNav={setNavType} /></Route>
           </Switch>
         </Container>
-        <footer>
-        </footer>
+        <Footer/>
       </Router>
     )}
     </>

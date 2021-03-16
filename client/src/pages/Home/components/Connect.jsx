@@ -58,7 +58,7 @@ const Connect = (props) => {
   )
 
   return (
-    <div className="section-container">
+    <div id="connect-section">
       <div id="connect-head">
         <h4 className="section-head">connect</h4>
       </div>
