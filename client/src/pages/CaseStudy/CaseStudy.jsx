@@ -4,12 +4,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'reactstrap';
+import PropTypes from 'prop-types';
 import { ImageContainer, Landing, TextSection } from '../../shared';
 
-const CaseStudy = (props) => {
+const CaseStudy = ({ setHomeNav }) => {
   // let { id } = useParams();
-  // props.setHomeNav(false);
-  
+  setHomeNav(false);
+
   return (
     <div>
       <Landing type="case-study">
@@ -63,6 +64,10 @@ const CaseStudy = (props) => {
       </Row>
     </div>
   );
+};
+
+CaseStudy.propTypes = {
+  setHomeNav: PropTypes.func.isRequired,
 };
 
 export default CaseStudy;
