@@ -9,7 +9,7 @@ const Skills = ({ children }) => {
 
   return (
     <>
-    <div className="section-container">
+    <div className="section-container" id="skills-section">
       <div id="skills-head">
         <h4 className="section-head">skills</h4>
       </div>

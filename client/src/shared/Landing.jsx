@@ -1,6 +1,5 @@
-import React from 'react'
+import React from 'react';
 import './styles/Landing.sass';
-
 
 const Landing = (props) => {
   const { type, children } = props;
@@ -13,11 +12,11 @@ const Landing = (props) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 Landing.propTypes = {
 
-}
+};
 
-export default Landing
+export default Landing;
