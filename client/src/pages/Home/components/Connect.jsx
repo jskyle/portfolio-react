@@ -1,4 +1,5 @@
 /* eslint-disable no-nested-ternary */
+/* eslint-disable-next-line */
 import React, { useState } from 'react';
 import './styles/Connect.sass';
 import {
@@ -6,10 +7,12 @@ import {
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faInstagram, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import {
+  faGithub, faInstagram, faTwitter, faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
 import axios from 'axios';
 
-const Connect = (props) => {
+const Connect = () => {
   const [formState, setFormState] = useState({
     name: '',
     email: '',

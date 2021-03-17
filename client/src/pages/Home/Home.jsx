@@ -1,13 +1,15 @@
 /* eslint-disable max-len */
+/* eslint-disable-next-line */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactRotatingText from 'react-rotating-text';
 import { useSpring, animated } from 'react-spring';
+import PropTypes from 'prop-types';
 import { Work, Skills, Connect } from './components/index';
 import { Landing, TextSection } from '../../shared';
 
-const Home = (props) => {
-  props.setHomeNav(true);
+const Home = ({ setHomeNav }) => {
+  setHomeNav(true);
   const [styles, set, stop] = useSpring(() => ({ opacity: 0, config: { duration: 3000 } }));
   const subTitles = ['front end web developer', 'software engineer', 'ui engineer', 'react artisan', 'digital creator', 'book worm', 'economics enthusiast'];
 
@@ -54,6 +56,10 @@ const Home = (props) => {
       <Connect />
     </animated.div>
   );
+};
+
+Home.propTypes = {
+  setHomeNav: PropTypes.func.isRequired,
 };
 
 export default Home;

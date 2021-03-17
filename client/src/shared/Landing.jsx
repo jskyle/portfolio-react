@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './styles/Landing.sass';
 
 const Landing = (props) => {
@@ -16,7 +17,8 @@ const Landing = (props) => {
 };
 
 Landing.propTypes = {
-
+  type: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Landing;

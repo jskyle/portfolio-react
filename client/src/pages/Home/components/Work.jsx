@@ -1,4 +1,6 @@
+/* eslint-disable-next-line */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './styles/Work.sass';
 
 const Work = ({ children }) => (
@@ -13,5 +15,9 @@ const Work = ({ children }) => (
     </div>
   </section>
 );
+
+Work.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Work;

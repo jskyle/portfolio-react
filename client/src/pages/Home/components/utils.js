@@ -1,107 +1,107 @@
 export const frontEnd = {
-  title: "Front End",
+  title: 'Front End',
   lists: [
     {
-      title: "Javascript",
+      title: 'Javascript',
       items: [
-        "React",
-        "Angular",
-        "Jest",
-        "Redux",
-        "ES6 / ES7",
-        "Typescript",
+        'React',
+        'Angular',
+        'Jest',
+        'Redux',
+        'ES6 / ES7',
+        'Typescript',
       ],
     },
     {
-      title: "CSS",
+      title: 'CSS',
       items: [
-        "SASS / LESS",
-        "Bootstrap",
-        "Foundation",
-        "Semantic UI",
-        "Materialize",
+        'SASS / LESS',
+        'Bootstrap',
+        'Foundation',
+        'Semantic UI',
+        'Materialize',
       ],
     },
     {
-      title: "Tools",
+      title: 'Tools',
       items: [
-        "CLI",
-        "Git",
-        "Websocket",
-        "Webpack",
+        'CLI',
+        'Git',
+        'Websocket',
+        'Webpack',
       ],
     },
-  ]
-}
+  ],
+};
 
 export const backEnd = {
-  title: "Back End",
+  title: 'Back End',
   lists: [
     {
-      title: "Languages",
+      title: 'Languages',
       items: [
-        "Node.js",
-        "Express",
-        "PHP",
-        "Ruby",
+        'Node.js',
+        'Express',
+        'PHP',
+        'Ruby',
       ],
     },
     {
-      title: "Database",
+      title: 'Database',
       items: [
-        "SQL",
-        "NoSQL",
-        "MongoDB",
-        "Google Cloud",
-        "Mamp",
+        'SQL',
+        'NoSQL',
+        'MongoDB',
+        'Google Cloud',
+        'Mamp',
       ],
     },
-  ]
-}
+  ],
+};
 
 export const devOps = {
-  title: "Dev Ops",
+  title: 'Dev Ops',
   lists: [
     {
-      title: "Skills",
+      title: 'Skills',
       items: [
-        "Agile",
+        'Agile',
       ],
     },
     {
-      title: "Tools",
+      title: 'Tools',
       items: [
-        "Docker",
-        "Trello",
-        "Git",
+        'Docker',
+        'Trello',
+        'Git',
       ],
     },
-  ]
-}
+  ],
+};
 
 export const design = {
-  title: "Design",
+  title: 'Design',
   lists: [
     {
-      title: "Soft Skills",
+      title: 'Soft Skills',
       items: [
-        "Color Theory",
-        "Responsive Design",
-        "Typography",
-        "Redux",
-        "ES6 / ES7",
-        "Typescript",
+        'Color Theory',
+        'Responsive Design',
+        'Typography',
+        'Redux',
+        'ES6 / ES7',
+        'Typescript',
       ],
     },
     {
-      title: "Tools",
+      title: 'Tools',
       items: [
-        "Figma",
-        "Sketch",
-        "Adobe XD",
-        "Illustrator",
-        "Invision",
+        'Figma',
+        'Sketch',
+        'Adobe XD',
+        'Illustrator',
+        'Invision',
       ],
     },
-  ]
-}
+  ],
+};

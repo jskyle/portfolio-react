@@ -1,10 +1,12 @@
+/* eslint-disable-next-line */
 import React from 'react';
 import './styles/Navigation.sass';
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import { UncontrolledTooltip } from 'reactstrap';
+import PropTypes from 'prop-types';
 
-const Navigation = ({ type = false }) => (
+const Navigation = ({ type }) => (
   <nav className={type ? 'primary' : 'secondary'}>
     <Link to="/"><h4 className="secondary-title "><span className="left">Kyle Kearney</span></h4></Link>
     <ul>
@@ -46,5 +48,13 @@ const Navigation = ({ type = false }) => (
     </ul>
   </nav>
 );
+
+Navigation.propTypes = {
+  type: PropTypes.bool,
+};
+
+Navigation.defaultProps = {
+  type: false,
+};
 
 export default Navigation;

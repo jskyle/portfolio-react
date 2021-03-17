@@ -1,3 +1,4 @@
+/* eslint-disable-next-line */
 import React from 'react';
 import './styles/Loading.sass';
 import { useSpring, animated } from 'react-spring';
@@ -96,9 +97,9 @@ const Loading = () => {
         <h6 className="loading-label">Kyle Kearney&apos;s Portfolio</h6>
         <div className="quote-container">
           <h4 className="quote-text">
-            "
+            &quot;
             {quotes[index].quote}
-            "
+            &quot;
           </h4>
           <h6 className="author-text">{quotes[index].author}</h6>
           <div className="progress-bar">
