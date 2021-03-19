@@ -1,12 +1,16 @@
-import { produce } from "immer";
+/* eslint-disable consistent-return */
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable no-param-reassign */
+import { produce } from 'immer';
 
-import * as actions from "./actions";
+import * as actions from './actions';
 
 const initialState = {
   is_authenticated: false,
   db_profile: null,
   profile: null,
-}
+};
 
 const reducer = produce<any>((base: any, action: any) => {
   switch (action.type) {
@@ -33,6 +37,9 @@ const reducer = produce<any>((base: any, action: any) => {
     case actions.REMOVE_DB_PROFILE: {
       base.db_profile = null;
       break;
+    }
+    default: {
+      return base;
     }
   }
 }, initialState);

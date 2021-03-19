@@ -1,13 +1,12 @@
-import React from 'react'
-import { TextSection } from "../../../shared"
-import IndPostResult from "./IndPostResult"
+/* eslint-disable-next-line */
+import React from 'react';
+import { TextSection } from '../../../shared';
+import IndPostResult from './IndPostResult';
 
-const PostResults = () => {
-  return (
-    <TextSection title="posts">
-      <IndPostResult/>
-    </TextSection>
-  )
-}
+const PostResults = () => (
+  <TextSection title="posts">
+    <IndPostResult />
+  </TextSection>
+);
 
-export default PostResults
+export default PostResults;

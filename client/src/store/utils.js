@@ -1,4 +1,5 @@
-export const createAction = (type, payloadKey = "payload") => {
+/* eslint-disable import/prefer-default-export */
+export const createAction = (type, payloadKey = 'payload') => {
   const action = (payload, meta = {}) => ({
     type,
     [payloadKey]: payload,

@@ -7,6 +7,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
+  useLocation,
 } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import { Footer, Navigation, Loading } from './shared';
@@ -15,7 +17,17 @@ import CaseStudy from './pages/CaseStudy/CaseStudy';
 import Blog from './pages/Blog/Blog';
 import BlogPost from './pages/Blog/BlogPost/BlogPost';
 import Login from './pages/Login/Login';
-import PostEditor from './pages/Admin/PostEditor/PostEditor';
+// import PostEditor from './pages/Admin/PostEditor/PostEditor';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 const App = () => {
   const [navType, setNavType] = useState(false);
@@ -33,6 +45,7 @@ const App = () => {
         <Loading />
       ) : (
         <Router>
+          <ScrollToTop />
           <div>
             <Navigation type={navType} />
           </div>
@@ -41,10 +54,13 @@ const App = () => {
               <Route path="/case-study/:id"><CaseStudy setHomeNav={setNavType} /></Route>
               <Route path="/my-blog"><Blog setHomeNav={setNavType} /></Route>
               <Route path="/blog-post/:id"><BlogPost /></Route>
-              <Route path="/create-post/"><PostEditor /></Route>
+              {/* <Route path="/create-post/"><PostEditor /></Route> */}
               <Route path="/user-login"><Login /></Route>
               <Route path="/admin-page" />
-              <Route path="/"><Home setHomeNav={setNavType} /></Route>
+              <Route path="/portfolio"><Home setHomeNav={setNavType} /></Route>
+              <Route exact path="/">
+                <Redirect to="/portfolio" />
+              </Route>
             </Switch>
           </Container>
           <Footer />

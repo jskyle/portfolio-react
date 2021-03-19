@@ -1,8 +1,10 @@
-import Footer from "./Footer";
-import ImageContainer from "./ImageContainer";
-import Landing from "./Landing";
-import Loading from "./Loading";
-import Navigation from "./Navigation";
-import TextSection from "./TextSection";
+import Footer from './Footer';
+import ImageContainer from './ImageContainer';
+import Landing from './Landing';
+import Loading from './Loading';
+import Navigation from './Navigation';
+import TextSection from './TextSection';
 
-export { Footer, ImageContainer, Landing, Loading, Navigation, TextSection };
+export {
+  Footer, ImageContainer, Landing, Loading, Navigation, TextSection,
+};

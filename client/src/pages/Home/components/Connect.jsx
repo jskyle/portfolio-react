@@ -21,7 +21,7 @@ const Connect = () => {
   const [status, setStatus] = useState('Initial');
 
   const handleSubmit = () => {
-    axios.post('/api/new/message', formState).then((res) => {
+    axios.post('/api/message', formState).then((res) => {
       setStatus(res.data.status);
       setFormState({
         name: '',
@@ -39,7 +39,7 @@ const Connect = () => {
     <div className="connect-status-body">
       { status === 'Sent' ? (
         <>
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2" className="connect-svg">
             <circle className="path circle" fill="none" stroke="#73AF55" strokeWidth="6" strokeMiterlimit="10" cx="65.1" cy="65.1" r="62.1" />
             <polyline className="path check" fill="none" stroke="#73AF55" strokeWidth="6" strokeLinecap="round" strokeMiterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
           </svg>
@@ -54,7 +54,7 @@ const Connect = () => {
         </>
       ) : status === 'Failed' ? (
         <>
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2" className="connect-svg">
             <circle className="path circle" fill="none" stroke="#D06079" strokeWidth="6" strokeMiterlimit="10" cx="65.1" cy="65.1" r="62.1" />
             <line className="path line" fill="none" stroke="#D06079" strokeWidth="6" strokeLinecap="round" strokeMiterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3" />
             <line className="path line" fill="none" stroke="#D06079" strokeWidth="6" strokeLinecap="round" strokeMiterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2" />
@@ -77,42 +77,32 @@ const Connect = () => {
       </div>
       <div id="connect-body">
         <Row id="connect-method-row">
-          <Col className="connect-method-col">
-            <a href="mailto:hello@kyledarrion.com?subject=Hi!">
-              <Card className="connect-method-card email">
-                <FontAwesomeIcon icon={faEnvelope} color="black" size="2x" />
-              </Card>
-            </a>
-          </Col>
-          <Col className="connect-method-col">
-            <a href="https://github.com/kyledarrion">
-              <Card className="connect-method-card github">
-                <FontAwesomeIcon icon={faGithub} color="black" size="2x" />
-              </Card>
-            </a>
-          </Col>
-          <Col className="connect-method-col">
-            <a href="https://github.com/kyledarrion">
-              <Card className="connect-method-card linkedin">
-                <FontAwesomeIcon icon={faLinkedin} color="black" size="2x" />
-              </Card>
-            </a>
-          </Col>
-          <Col className="connect-method-col">
-            <a href="https://instagram.com/kyledarrion" target="_blank" rel="noopener noreferrer">
-              <Card className="connect-method-card instagram">
-                <FontAwesomeIcon icon={faInstagram} color="black" size="2x" />
-              </Card>
-            </a>
-          </Col>
+          <a href="mailto:hello@kyledarrion.com?subject=Hi!">
+            <Card className="connect-method-card email">
+              <FontAwesomeIcon icon={faEnvelope} color="black" size="1x" />
+            </Card>
+          </a>
+          <a href="https://github.com/kyledarrion">
+            <Card className="connect-method-card github">
+              <FontAwesomeIcon icon={faGithub} color="black" size="1x" />
+            </Card>
+          </a>
+          <a href="https://www.linkedin.com/in/kyle-kearney-2b3b67b4/">
+            <Card className="connect-method-card linkedin">
+              <FontAwesomeIcon icon={faLinkedin} color="black" size="1x" />
+            </Card>
+          </a>
+          <a href="https://instagram.com/kyledarrion" target="_blank" rel="noopener noreferrer">
+            <Card className="connect-method-card instagram">
+              <FontAwesomeIcon icon={faInstagram} color="black" size="1x" />
+            </Card>
+          </a>
 
-          <Col className="connect-method-col">
-            <a href="https://twitter.com/kyledarrion" target="_blank" rel="noopener noreferrer">
-              <Card className="connect-method-card twitter">
-                <FontAwesomeIcon icon={faTwitter} color="black" size="2x" />
-              </Card>
-            </a>
-          </Col>
+          <a href="https://twitter.com/kyledarrion" target="_blank" rel="noopener noreferrer">
+            <Card className="connect-method-card twitter">
+              <FontAwesomeIcon icon={faTwitter} color="black" size="1x" />
+            </Card>
+          </a>
         </Row>
         <Row className="w-100">
           { status === 'Initial' ? (

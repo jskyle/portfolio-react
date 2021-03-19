@@ -2,10 +2,8 @@
 /* eslint-disable-next-line */
 import React, { Component } from 'react';
 import './sass/TextEditor.sass';
-import {
-  convertToRaw, convertFromRaw, createWithContent, EditorState,
-} from 'draft-js';
-import Editor, { createEditorStateWithText } from '@draft-js-plugins/editor';
+import { EditorState } from 'draft-js';
+import Editor from '@draft-js-plugins/editor';
 import createInlineToolbarPlugin, {
   Separator,
 } from '@draft-js-plugins/inline-toolbar';

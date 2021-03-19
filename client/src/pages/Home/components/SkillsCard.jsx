@@ -1,3 +1,4 @@
+/* eslint-disable-next-line */
 import React from 'react';
 import './styles/SkillsCard.sass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
