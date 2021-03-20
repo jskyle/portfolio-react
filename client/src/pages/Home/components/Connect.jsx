@@ -11,6 +11,7 @@ import {
   faGithub, faInstagram, faTwitter, faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
 import axios from 'axios';
+import { SocialRow } from "../../../shared";
 
 const Connect = () => {
   const [formState, setFormState] = useState({
@@ -76,34 +77,7 @@ const Connect = () => {
         <h4 className="section-head">connect</h4>
       </div>
       <div id="connect-body">
-        <Row id="connect-method-row">
-          <a href="mailto:hello@kyledarrion.com?subject=Hi!">
-            <Card className="connect-method-card email">
-              <FontAwesomeIcon icon={faEnvelope} color="black" size="1x" />
-            </Card>
-          </a>
-          <a href="https://github.com/kyledarrion">
-            <Card className="connect-method-card github">
-              <FontAwesomeIcon icon={faGithub} color="black" size="1x" />
-            </Card>
-          </a>
-          <a href="https://www.linkedin.com/in/kyle-kearney-2b3b67b4/">
-            <Card className="connect-method-card linkedin">
-              <FontAwesomeIcon icon={faLinkedin} color="black" size="1x" />
-            </Card>
-          </a>
-          <a href="https://instagram.com/kyledarrion" target="_blank" rel="noopener noreferrer">
-            <Card className="connect-method-card instagram">
-              <FontAwesomeIcon icon={faInstagram} color="black" size="1x" />
-            </Card>
-          </a>
-
-          <a href="https://twitter.com/kyledarrion" target="_blank" rel="noopener noreferrer">
-            <Card className="connect-method-card twitter">
-              <FontAwesomeIcon icon={faTwitter} color="black" size="1x" />
-            </Card>
-          </a>
-        </Row>
+        <SocialRow/>
         <Row className="w-100">
           { status === 'Initial' ? (
             <Form id="connect-form">

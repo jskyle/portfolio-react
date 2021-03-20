@@ -10,6 +10,8 @@ import {
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const StyledSocialRow = styled(Row)`
+  width: 100%;
+  max-width: 800px;
   margin-top: 2rem;
   font-size: 1.2rem !important;
   display: flex;

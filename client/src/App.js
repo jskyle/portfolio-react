@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from 'react-redux';
+import React, { useEffect } from "react";
+import { AnimatePresence } from "framer-motion"
 import "./App.sass";
 import {
   BrowserRouter as Router,
@@ -9,7 +9,8 @@ import {
   useLocation,
 } from "react-router-dom";
 import { Container } from "reactstrap";
-import { Footer, Navigation, Loading } from "./shared";
+
+// pages
 import Home from "./pages/Home/Home";
 import CaseStudy from "./pages/CaseStudy/CaseStudy";
 import Blog from "./pages/Blog/Blog";
@@ -17,89 +18,35 @@ import BlogPost from "./pages/Blog/BlogPost/BlogPost";
 import Login from "./pages/Login/Login";
 import PostEditor from './pages/Admin/PostEditor/PostEditor';
 
-import { isAuthenticated, userRoles } from './store/auth/selectors'
+// components
+import { Footer, Navigation } from "./shared";
 
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-}
-
-const PrivateRoute = ({ children, ...rest }) => {
-  const auth = useSelector(userRoles())[0] === "ROLE_ADMIN";
-  return (
-    <Route
-      {...rest}
-      render={({ location }) =>
-        auth ? (
-          children
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/user-login",
-              state: { from: location }
-            }}
-          />
-        )
-      }
-    />
-  );
-}
+// utils
+import { PrivateRoute, ScrollToTop } from "./utils";
 
 const App = () => {
-  const [navType, setNavType] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const auth = useSelector(isAuthenticated());
-  const admin = useSelector(userRoles())[0] === "ROLE_ADMIN";
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 4500);
-  }, []);
-
   return (
-    <>
-      {loading ? (
-        <Loading />
-      ) : (
-        <Router>
-          <ScrollToTop />
-          <div>
-            <Navigation type={navType} />
-          </div>
-          <Container>
-            <Switch>
-              <Route path="/case-study/:id">
-                <CaseStudy setHomeNav={setNavType} />
-              </Route>
-              <Route path="/my-blog">
-                <Blog setHomeNav={setNavType} />
-              </Route>
-              <Route path="/blog-post/:id/:slug">
-                <BlogPost />
-              </Route>
-              <PrivateRoute path="/create-post/"><PostEditor/></PrivateRoute>
-              <Route path="/user-login">
-                <Login />
-              </Route>
-              <Route path="/admin-page" />
-              <Route path="/portfolio">
-                <Home setHomeNav={setNavType} />
-              </Route>
-              <Route exact path="/">
-                <Redirect to="/portfolio" />
-              </Route>
-            </Switch>
-          </Container>
-          <Footer />
-        </Router>
-      )}
-    </>
+    <Router>
+      <ScrollToTop />
+      <div>
+        <Navigation />
+      </div>
+      <Container>
+        <AnimatePresence>
+          <Switch location={location} key={location.pathname}>
+            <Route path="/case-study/:id" component={CaseStudy} />
+            <Route path="/blog" component={Blog} />
+            <Route path="/blog-post/:id/:slug" component={BlogPost} />
+            <PrivateRoute path="/create-post/" component={PostEditor} />
+            <Route path="/user-login" component={Login} />
+            <Route path="/portfolio" component={Home} />
+            <Route exact path="/">
+              <Redirect to="/portfolio" />
+            </Route>
+          </Switch>
+        </AnimatePresence>
+      </Container>
+    </Router>
   );
 };
 

@@ -5,14 +5,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
-import { ImageContainer, Landing, TextSection } from '../../shared';
+import { ImageContainer, Landing, TextSection, PageMotionWrapper } from '../../shared';
 
-const CaseStudy = ({ setHomeNav }) => {
+const CaseStudy = () => {
   // let { id } = useParams();
-  setHomeNav(false);
 
   return (
-    <div>
+    <PageMotionWrapper>
       <Landing type="case-study">
         <h5>Case Study:</h5>
         <h1>Light Nostalgia</h1>
@@ -62,7 +61,7 @@ const CaseStudy = ({ setHomeNav }) => {
           </ul>
         </TextSection>
       </Row>
-    </div>
+    </PageMotionWrapper>
   );
 };
 

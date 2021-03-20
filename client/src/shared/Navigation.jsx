@@ -12,6 +12,7 @@ import { Divide as Hamburger } from 'hamburger-react';
 
 
 const StyledNav = styled.nav`
+  position: fixed;
   display ${(props) => (props.open ? "flex" : "none")};
   justify-content: center;
   align-items: center;
@@ -117,7 +118,7 @@ const Navigation = ({ type }) => {
           </NavLink>
         </li> */}
         <li>
-          <NavLink activeClassName="active" to="/my-blog" onClick={toggle}>
+          <NavLink activeClassName="active" to="/blog" onClick={toggle}>
             <span className="left">journal</span>
           </NavLink>
         </li>

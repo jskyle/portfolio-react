@@ -4,12 +4,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactRotatingText from 'react-rotating-text';
 import { useSpring, animated } from 'react-spring';
-import PropTypes from 'prop-types';
 import { Work, Skills, Connect } from './components/index';
-import { Landing, TextSection } from '../../shared';
+import { Landing, TextSection, PageMotionWrapper } from '../../shared';
 
-const Home = ({ setHomeNav }) => {
-  setHomeNav(true);
+const Home = () => {
+
   const [styles, set, stop] = useSpring(() => ({ opacity: 0, config: { duration: 3000 } }));
   const subTitles = ['front end web developer', 'software engineer', 'ui engineer', 'react artisan', 'digital creator', 'book worm', 'economics enthusiast'];
 
@@ -18,7 +17,7 @@ const Home = ({ setHomeNav }) => {
   stop();
 
   return (
-    <animated.div style={styles}>
+    <PageMotionWrapper>
       <Landing type="home">
         <h1>Kyle Kearney</h1>
         <h6 className="sub-header rotate-1">
@@ -33,20 +32,20 @@ const Home = ({ setHomeNav }) => {
         </TextSection>
       </div>
       <Work>
-        <ul id="case-study-links-container">
-          <li className="case-study-links">
+        <ul>
+          <li>
             <Link to="/case-study/1"><span className="left-big">Light Nostalgia</span></Link>
           </li>
-          <li className="case-study-links">
+          <li>
             <Link to="/case-study/2"><span className="left-big">Pom</span></Link>
           </li>
-          <li className="case-study-links">
+          <li>
             <Link to="/case-study/3"><span className="left-big">Luca</span></Link>
           </li>
-          <li className="case-study-links">
+          <li>
             <Link to="/case-study/4"><span className="left-big">Posh Photo</span></Link>
           </li>
-          <li className="case-study-links">
+          <li>
             <Link to="/case-study/5"><span className="left-big">Personal Blog</span></Link>
           </li>
 
@@ -54,12 +53,8 @@ const Home = ({ setHomeNav }) => {
       </Work>
       <Skills />
       <Connect />
-    </animated.div>
+    </PageMotionWrapper>
   );
-};
-
-Home.propTypes = {
-  setHomeNav: PropTypes.func.isRequired,
 };
 
 export default Home;

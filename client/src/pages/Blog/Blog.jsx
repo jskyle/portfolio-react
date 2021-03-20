@@ -4,15 +4,14 @@ import React, { useEffect, useState }from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Blog.sass';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { Landing } from '../../shared';
+import { Landing, PageMotionWrapper } from '../../shared';
 import PostResults from './components/PostResults';
 
 // redux
 import { fetchPosts } from '../../store/blog/thunks';
 import { getPosts } from '../../store/blog/selectors';
 
-const Blog = ({ setHomeNav }) => {
+const Blog = () => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => getPosts(state));
   const [isLoading, setIsloading ] = useState(true);
@@ -28,10 +27,8 @@ const Blog = ({ setHomeNav }) => {
   const link = isLoading ? "/" : `/blog-post/${featuredPost.id}/${featuredPost.slug}`
 
 
-
-  setHomeNav(false);
   return (
-    <>
+    <PageMotionWrapper>
       {isLoading ? (<h5>Loading</h5>) : (
       <>
         <Landing type="blog-home">
@@ -45,12 +42,9 @@ const Blog = ({ setHomeNav }) => {
         <PostResults posts={posts} />
       </>
       )}
-    </>
+    </PageMotionWrapper>
   );
 };
 
-Blog.propTypes = {
-  setHomeNav: PropTypes.func.isRequired,
-};
 
 export default Blog;
