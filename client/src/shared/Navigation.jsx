@@ -2,19 +2,94 @@
 /* eslint-disable max-len */
 /* eslint-disable-next-line */
 import React, { useState } from 'react';
-import './styles/Navigation.sass';
+import styled from 'styled-components';
 import { NavLink, Link } from 'react-router-dom';
 // import { Link as ScrollLink } from 'react-scroll';
-import {
-  Button, UncontrolledTooltip, Row, Card,
-} from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faTwitter, faGithub, faLinkedin, faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
+import SocialRow from './SocialRow';
 import { Divide as Hamburger } from 'hamburger-react';
+
+
+const StyledNav = styled.nav`
+  display ${(props) => (props.open ? "flex" : "none")};
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10000;
+  background-color: #ffffff;
+
+  ul {
+    list-style: none;
+
+    a {
+      font-weight: 800;
+      font-size: 8rem;
+
+      .left {
+        position: relative;
+      }
+    };
+
+    .active {
+      .left:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        bottom: -2px;
+        left: 0;
+        background-color: #000000;
+        visibility: visible;
+        transition: all 0.3s ease-in-out;
+      };
+    };
+  };
+`;
+
+const HeaderBar = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100001;
+
+  button {
+    position: absolute;
+    padding: 1rem;
+    top: 1rem;
+    right: 1rem;
+    border-radius: 50%;
+    color: black;
+  };
+
+  h4 {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    font-weight: 600;
+  };
+
+  button:hover {
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    transition: all 1s ease;
+  }
+
+`;
+
+const StyledUl = styled.ul`
+  list-style: none;
+
+    a {
+      font-size: 8rem;
+    }
+`;
 
 const Navigation = ({ type }) => {
   const [navOpen, toggleNavOpen] = useState(false);
@@ -24,10 +99,10 @@ const Navigation = ({ type }) => {
   };
 
   const navScreen = (
-    <nav className={`nav-container ${navOpen && 'open'}`}>
-      <ul className="nav-list">
+    <StyledNav open={navOpen}>
+      <ul>
         <li>
-          <NavLink activeClassName="active" className="nav-link" to="/portfolio" onClick={toggle}>
+          <NavLink activeClassName="active" to="/portfolio" onClick={toggle}>
             <span className="left">portfolio</span>
           </NavLink>
         </li>
@@ -42,7 +117,7 @@ const Navigation = ({ type }) => {
           </NavLink>
         </li> */}
         <li>
-          <NavLink activeClassName="active" className="nav-link" to="/my-blog" onClick={toggle}>
+          <NavLink activeClassName="active" to="/my-blog" onClick={toggle}>
             <span className="left">journal</span>
           </NavLink>
         </li>
@@ -52,44 +127,18 @@ const Navigation = ({ type }) => {
           </NavLink>
         </li> */}
         <li>
-          <Row id="nav-social-row">
-            <a href="mailto:hello@kyledarrion.com?subject=Hi!">
-              <Card className="connect-method-card email">
-                <FontAwesomeIcon icon={faEnvelope} color="black" size="sm" />
-              </Card>
-            </a>
-            <a href="https://github.com/kyledarrion">
-              <Card className="connect-method-card github">
-                <FontAwesomeIcon icon={faGithub} color="black" size="sm" />
-              </Card>
-            </a>
-            <a href="https://www.linkedin.com/in/kyle-kearney-2b3b67b4/">
-              <Card className="connect-method-card linkedin">
-                <FontAwesomeIcon icon={faLinkedin} color="black" size="sm" />
-              </Card>
-            </a>
-            <a href="https://instagram.com/kyledarrion" target="_blank" rel="noopener noreferrer">
-              <Card className="connect-method-card instagram">
-                <FontAwesomeIcon icon={faInstagram} color="black" size="sm" />
-              </Card>
-            </a>
-
-            <a href="https://twitter.com/kyledarrion" target="_blank" rel="noopener noreferrer">
-              <Card className="connect-method-card twitter">
-                <FontAwesomeIcon icon={faTwitter} color="black" size="sm" />
-              </Card>
-            </a>
-          </Row>
+          <SocialRow/>
         </li>
       </ul>
-    </nav>
+    </StyledNav>
   );
+
   return (
     <>
-      <div className="header-bar primary">
-        <Link to="/"><h4 className="secondary-title"><span className="left">{!type ? 'Kyle Kearney' : ''}</span></h4></Link>
+      <HeaderBar>
+        <Link to="/"><h4><span className="left">{!type || navOpen ? 'Kyle Kearney' : ''}</span></h4></Link>
         <Button className="header-bar-nav-button" color="link" onClick={toggle}><Hamburger toggle={toggle} toggled={navOpen} onToggle={toggle} hideOutline label="navigation menu" /></Button>
-      </div>
+      </HeaderBar>
       {navScreen}
     </>
   );

@@ -35,7 +35,8 @@
     "react-transition-group": "^2.9.0",
     "reactstrap": "^8.9.0",
     "redraft": "^0.10.2",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "styled-components": "^5.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
