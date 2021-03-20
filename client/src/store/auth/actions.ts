@@ -17,3 +17,6 @@ export const setDbProfile = createAction(SET_DB_PROFILE);
 
 export const REMOVE_DB_PROFILE = 'REMOVE_DB_PROFILE';
 export const removeDbProfile = createAction(REMOVE_DB_PROFILE);
+
+export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
+export const createSuccess = 'CREATE_USER_SUCCESS'; 

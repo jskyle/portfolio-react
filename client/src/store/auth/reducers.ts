@@ -1,25 +1,32 @@
-/* eslint-disable consistent-return */
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable no-param-reassign */
 import { produce } from 'immer';
 
 import * as actions from './actions';
 
 const initialState = {
-  is_authenticated: false,
-  db_profile: null,
-  profile: null,
+  isAuthenticated: false,
+  accessToken: '',
+  id: '',
+  username: '',
+  email: '',
+  roles: [],
 };
 
 const reducer = produce<any>((base: any, action: any) => {
   switch (action.type) {
     case actions.LOGIN_SUCCESS: {
-      base.is_authenticated = true;
+      const {accessToken, email, username, id, roles} = action.payload
+
+      base.isAuthenticated =  true;
+      base.accessToken = accessToken;
+      base.id = id;
+      base.username = username;
+      base.email = email;
+      base.roles = roles;
+
       break;
     }
     case actions.LOGIN_FAILURE: {
-      base.is_authenticated = false;
+      base = initialState;
       break;
     }
     case actions.ADD_PROFILE: {

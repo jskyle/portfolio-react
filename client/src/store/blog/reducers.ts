@@ -1,7 +1,3 @@
-/* eslint-disable consistent-return */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
-/* eslint-disable no-param-reassign */
 import { produce } from 'immer';
 
 import * as actions from './actions';

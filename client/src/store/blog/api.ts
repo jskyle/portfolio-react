@@ -1,9 +1,5 @@
-import axios from "axios";
+import { axiosInstance } from '../utils';
 
-export const createPost = (payload: any) => {
-  return axios.post(`/api/post/posttodb`, payload);
-};
+export const createPost = (payload: any) => axiosInstance.post('/api/post/posttodb', payload);
 
-export const editPost = (payload: any) => {
-  return axios.put('/api/put/post', payload);
-};
+export const editPost = (payload: any) => axiosInstance.put('/api/put/post', payload);
