@@ -1,35 +1,39 @@
-/* eslint-disable max-len */
-/* eslint-disable-next-line */
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import './BlogPost.sass';
-import { Landing, TextSection } from '../../../shared';
+import { useParams } from 'react-router-dom';
+import { Landing, RenderDraft } from '../../../shared';
+import { renderers } from './utils';
 
-const BlogPost = () => (
+// redux
+import { getPost } from "../../../store/blog/selectors";
+import { fetchSinglePost } from "../../../store/blog/thunks";
+
+const BlogPost = () => {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const post = useSelector((state) => getPost(state, parseInt(id)));
+  
+  useEffect(() => {
+    if (!post) {
+      dispatch(fetchSinglePost(parseInt(id)));
+    }
+  }, [])
+
+  console.log(post, id);
+
+  const raw = JSON.parse(post.content, renderers);
+
+ return ( 
   <>
     <Landing>
       <h5>post:</h5>
-      <h1 className="post-title">You Are Already Awesome. That New Thing Won’t Change That.</h1>
+      <h1 className="post-title">{post.title}</h1>
     </Landing>
-    <TextSection>
-      <pre>
-        <code>
-          const LameConst = console.log(superlame)
-        </code>
-      </pre>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </TextSection>
+    <div>
+      <RenderDraft raw={raw}/>
+    </div>
   </>
-);
+)};
 
 export default BlogPost;

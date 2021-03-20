@@ -1,25 +1,50 @@
 /* eslint-disable max-len */
 /* eslint-disable-next-line */
-import React from 'react';
+import React, { useEffect, useState }from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import './Blog.sass';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Landing } from '../../shared';
 import PostResults from './components/PostResults';
 
+// redux
+import { fetchPosts } from '../../store/blog/thunks';
+import { getPosts } from '../../store/blog/selectors';
+
 const Blog = ({ setHomeNav }) => {
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => getPosts(state));
+  const [isLoading, setIsloading ] = useState(true);
+
+  useEffect(() => {
+      setIsloading(true);
+      dispatch(fetchPosts('all')).then(() => {
+        setIsloading(false)
+      });
+  }, [])
+
+  const featuredPost = posts.find((e) => e.featured === true) || posts[0];
+  const link = isLoading ? "/" : `/blog-post/${featuredPost.id}/${featuredPost.slug}`
+
+
+
   setHomeNav(false);
   return (
     <>
-      <Landing type="blog-home">
-        <h5>featued post:</h5>
-        <Link to="/blog-post/1"><h1 className="featured-post-title">Life Lessons I Learned Through Coding.</h1></Link>
-        <p className="featured-post-brief">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum…
-          <Link className="left" to="/">read more.</Link>
-        </p>
-      </Landing>
-      <PostResults />
+      {isLoading ? (<h5>Loading</h5>) : (
+      <>
+        <Landing type="blog-home">
+          <h5>featured post:</h5>
+          <Link to={link}><h1 className="featured-post-title">{featuredPost.title}</h1></Link>
+          <p className="featured-post-brief">
+            {featuredPost.summary}
+            <Link className="left" to={link}>read more.</Link>
+          </p>
+        </Landing>
+        <PostResults posts={posts} />
+      </>
+      )}
     </>
   );
 };

@@ -32,7 +32,9 @@
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.2",
     "react-spring": "^8.0.27",
+    "react-transition-group": "^2.9.0",
     "reactstrap": "^8.9.0",
+    "redraft": "^0.10.2",
     "redux": "^4.0.5"
   },
   "scripts": {

@@ -80,7 +80,7 @@ const App = () => {
               <Route path="/my-blog">
                 <Blog setHomeNav={setNavType} />
               </Route>
-              <Route path="/blog-post/:id">
+              <Route path="/blog-post/:id/:slug">
                 <BlogPost />
               </Route>
               <PrivateRoute path="/create-post/"><PostEditor/></PrivateRoute>
