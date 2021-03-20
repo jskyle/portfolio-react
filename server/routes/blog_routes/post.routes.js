@@ -10,4 +10,16 @@ module.exports = function (app) {
   });
 
   app.post("/api/post/create", controller.createPost);
+  
+  app.put("/api/post/archive", controller.archivePost);
+
+
+
+  
+  app.get("/api/posts/all", controller.getAllPosts);
+  
+  app.get("/api/posts/published", controller.getPublishedPosts);
+  
+  app.get("/api/posts/:id", controller.getSinglePost);
+
 };
