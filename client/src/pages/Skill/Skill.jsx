@@ -1,9 +1,17 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux'; 
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
-import { PageMotionWrapper } from "../../shared";
+import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components';
+
+
+// components
+import { PageMotionWrapper } from "../../shared";
+
+//redux
+import { getContent } from "../../store/ui/selectors";
+import { setSetting } from "../../store/ui/actions";
 
 const StyledWrapper = styled.div`
   width: 100vw;
@@ -11,15 +19,18 @@ const StyledWrapper = styled.div`
   background-color: black;
   z-index: 99999;
   color: white;
-
 `;
 
 const Skill = () => {
+  const dispatch = useDispatch();
+  const { type } = useParams();
+  const content = useSelector((state) => getContent(state, { type: "skills", key: type }))
+
   return (
   <PageMotionWrapper>
     <StyledWrapper>
       <div id="skills-card-head">
-        <h1 className="skills-card-title">Front End</h1>
+        <h1 className="skills-card-title">{content.title}</h1>
         <Link to="/portfolio" className="close-button">
           <FontAwesomeIcon icon={faTimes} color="white" />
         </Link>

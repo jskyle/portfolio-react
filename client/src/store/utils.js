@@ -47,3 +47,11 @@ export const createSelectorContext = (root) => (path, transformationFn) => {
   if (typeof path === "string") return createSelector([...root, path], transformationFn);
   return createSelector([...root, ...path], transformationFn);
 };
+
+
+export const snakeToCamel = (str) => str.replace(
+    /([-_][a-z])/g,
+    (group) => group.toUpperCase()
+                    .replace('-', '')
+                    .replace('_', '')
+);

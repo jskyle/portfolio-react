@@ -1,14 +1,12 @@
 /* eslint-disable-next-line */
-import React, { useState } from 'react';
+import React from 'react';
 import './styles/Skills.sass';
-import SkillsCard from './SkillsCard';
 import { Link } from 'react-router-dom';
 import {
   frontEnd, backEnd, devOps, design,
 } from './utils';
 
 const Skills = () => {
-  const [skillsContent, setSkillsContent] = useState(null);
 
   return (
     <>
@@ -25,7 +23,6 @@ const Skills = () => {
           </div>
         </div>
       </div>
-      <SkillsCard content={skillsContent} setContent={setSkillsContent} />
     </>
   );
 };
