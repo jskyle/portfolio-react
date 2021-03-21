@@ -4,7 +4,7 @@ import React, { useEffect, useState }from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Blog.sass';
 import { Link } from 'react-router-dom';
-import { Landing, PageMotionWrapper } from '../../shared';
+import { Landing, PageMotionWrapper, LoadingWrapper } from '../../shared';
 import PostResults from './components/PostResults';
 
 // redux
@@ -28,21 +28,20 @@ const Blog = () => {
 
 
   return (
-    <PageMotionWrapper>
-      {isLoading ? (<h5>Loading</h5>) : (
-      <>
-        <Landing type="blog-home">
-          <h5>featured post:</h5>
-          <Link to={link}><h1 className="featured-post-title">{featuredPost.title}</h1></Link>
-          <p className="featured-post-brief">
-            {featuredPost.summary}
-            <Link className="left" to={link}>read more.</Link>
-          </p>
-        </Landing>
-        <PostResults posts={posts} />
-      </>
-      )}
-    </PageMotionWrapper>
+    <LoadingWrapper loading={isLoading}>
+      <PageMotionWrapper>
+          
+          <Landing secondary>
+            <h5>featured post:</h5>
+            <Link to={link}><h2>{isLoading ? "" : featuredPost.title}</h2></Link>
+            <p className="featured-post-brief">
+              {isLoading ? "" : featuredPost.summary}
+              <Link className="left" to={link}>read more.</Link>
+            </p>
+          </Landing>
+          <PostResults posts={posts} />
+      </PageMotionWrapper>
+    </LoadingWrapper>
   );
 };
 

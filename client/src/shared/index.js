@@ -1,7 +1,7 @@
 import Footer from './Footer';
 import ImageContainer from './ImageContainer';
 import Landing from './Landing';
-import Loading from './Loading';
+import LoadingWrapper from './LoadingWrapper';
 import Navigation from './Navigation';
 import RenderDraft from "./RenderDraft/RenderDraft"
 import TextSection from './TextSection';
@@ -12,7 +12,7 @@ export {
   Footer,
   ImageContainer,
   Landing,
-  Loading,
+  LoadingWrapper,
   Navigation,
   TextSection,
   RenderDraft,
