@@ -6,20 +6,14 @@ import {
   Switch,
   Route,
   Redirect,
-  useLocation,
 } from "react-router-dom";
 import { Container } from "reactstrap";
 
 // pages
-import Home from "./pages/Home/Home";
-import CaseStudy from "./pages/CaseStudy/CaseStudy";
-import Blog from "./pages/Blog/Blog";
-import BlogPost from "./pages/Blog/BlogPost/BlogPost";
-import Login from "./pages/Login/Login";
-import PostEditor from './pages/Admin/PostEditor/PostEditor';
+import {Home, Login, Blog, BlogPost, PostEditor, CaseStudy, Skill} from "./pages"
 
 // components
-import { Footer, Navigation } from "./shared";
+import { Navigation } from "./shared";
 
 // utils
 import { PrivateRoute, ScrollToTop } from "./utils";
@@ -31,7 +25,7 @@ const App = () => {
       <div>
         <Navigation />
       </div>
-      <Container>
+      <Container style={{position: "relative"}}>
         <AnimatePresence>
           <Switch location={location} key={location.pathname}>
             <Route path="/case-study/:id" component={CaseStudy} />
@@ -40,6 +34,7 @@ const App = () => {
             <PrivateRoute path="/create-post/" component={PostEditor} />
             <Route path="/user-login" component={Login} />
             <Route path="/portfolio" component={Home} />
+            <Route path="/skill/:type" component={Skill}/>
             <Route exact path="/">
               <Redirect to="/portfolio" />
             </Route>
