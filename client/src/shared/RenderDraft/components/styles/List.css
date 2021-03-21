@@ -6,6 +6,11 @@
   transition: all 300ms ease-in;
 }
 
+.list {
+  list-style: circle;
+  padding-left: 1rem;
+}
+
 .animatedList-enter {
   opacity: 0.01;
 }

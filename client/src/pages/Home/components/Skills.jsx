@@ -2,9 +2,6 @@
 import React from 'react';
 import './styles/Skills.sass';
 import { Link } from 'react-router-dom';
-import {
-  frontEnd, backEnd, devOps, design,
-} from './utils';
 
 const Skills = () => {
 

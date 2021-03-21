@@ -21,7 +21,7 @@ const StyledNav = styled.nav`
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 10000;
+  z-index: 100;
   background-color: #ffffff;
 
   ul {
@@ -57,7 +57,7 @@ const HeaderBar = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100001;
+  z-index: 101;
 
   button {
     position: absolute;

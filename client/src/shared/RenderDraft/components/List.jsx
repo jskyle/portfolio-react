@@ -15,7 +15,7 @@ const List = ({ ordered, children }) => {
     );
   }
   return (
-  <ul>
+  <ul className="list">
     {children}
   </ul>
 )};
