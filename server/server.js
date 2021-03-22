@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const path = require('path');
 const cors = require("cors");
 
 const app = express();
@@ -9,6 +10,7 @@ var corsOptions = {
 };
 
 app.use(express.static(path.resolve(__dirname, '../client/build')));
+
 
 app.use(cors(corsOptions));
 
@@ -30,9 +32,6 @@ db.sequelize.sync({ force: true }).then(() => {
 });
 
 // simple route
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-});
 
 // routes
 require('./routes/auth.routes')(app);
@@ -40,6 +39,9 @@ require('./routes/user.routes')(app);
 require('./routes/blog_routes/post.routes')(app);
 require('./routes/external.routes')(app);
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
@@ -51,12 +53,12 @@ function initial() {
     id: 1,
     name: "user"
   });
-
+  
   Role.create({
     id: 2,
     name: "moderator"
   });
-
+  
   Role.create({
     id: 3,
     name: "admin"
