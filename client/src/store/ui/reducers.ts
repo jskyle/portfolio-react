@@ -6,6 +6,7 @@ import * as actions from './actions';
 
 const initialState = {
   overrideScrollTo: false,
+  overlay: false,
   darkMode: false,
   navType: "primary",
   content,

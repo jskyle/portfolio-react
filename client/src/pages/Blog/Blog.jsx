@@ -14,34 +14,40 @@ import { getPosts } from '../../store/blog/selectors';
 const Blog = () => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => getPosts(state));
-  const [isLoading, setIsloading ] = useState(true);
+  const [isLoading, setIsLoading ] = useState(true);
 
   useEffect(() => {
-      setIsloading(true);
+    if (posts.length === 0) {
       dispatch(fetchPosts('all')).then(() => {
-        setIsloading(false)
+        setIsLoading(false)
+      }).catch(() => {
+        setIsLoading(false);
       });
-  }, [])
+    };
 
-  const featuredPost = posts.find((e) => e.featured === true) || posts[0];
+    if (posts.length > 0) {
+      setIsLoading(false);
+    }
+  }, [posts])
+
+
+  const featuredPost = isLoading ? false : posts.find((e) => e.featured === true) || posts[0];
+
   const link = isLoading ? "/" : `/blog-post/${featuredPost.id}/${featuredPost.slug}`
 
 
   return (
-    <LoadingWrapper loading={isLoading}>
-      <PageMotionWrapper>
-          
-          <Landing secondary>
-            <h5>featured post:</h5>
-            <Link to={link}><h2>{isLoading ? "" : featuredPost.title}</h2></Link>
-            <p className="featured-post-brief">
-              {isLoading ? "" : featuredPost.summary}
-              <Link className="left" to={link}>read more.</Link>
-            </p>
-          </Landing>
-          <PostResults posts={posts} />
-      </PageMotionWrapper>
-    </LoadingWrapper>
+    <PageMotionWrapper>
+      <Landing start>
+        <h5>featured post:</h5>
+        <Link to={link}><h2>{isLoading ? "" : featuredPost.title}</h2></Link>
+        <p className="featured-post-brief">
+          {isLoading ? "" : featuredPost.summary}
+          <Link className="left" to={link}>read more.</Link>
+        </p>
+      </Landing>
+      <PostResults posts={posts} />
+    </PageMotionWrapper>
   );
 };
 

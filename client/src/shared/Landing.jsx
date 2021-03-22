@@ -18,7 +18,7 @@ const LandingContainer = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: ${(props) => (props.secondary ? 'start' : 'center')};
+    align-items: ${(props) => (props.secondary || props.start ? 'start' : 'center')};
 
     h2 {
       font-size: 6rem;
@@ -94,11 +94,12 @@ const LandingContainer = styled.div`
 
 `;
 
-const Landing = ({ children, secondary }) => {
-  
+const Landing = ({ children, secondary, start }) => {
+  const secondary_ = secondary ? "true" : "";
+  const start_ = start ? "true" : "";
 
   return (
-      <LandingContainer secondary={secondary}>
+      <LandingContainer secondary={secondary_} start={start_}>
         <div>
           {children}
         </div>

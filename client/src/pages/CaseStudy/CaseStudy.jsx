@@ -2,71 +2,90 @@
 /* eslint-disable max-len */
 // eslint-disable-next-line no-use-before-define
 import React from 'react';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { useSelector } from "react-redux";
+import { NavLink, useParams } from 'react-router-dom';
 import { Row, Col } from 'reactstrap';
-import PropTypes from 'prop-types';
 import { ImageContainer, Landing, TextSection, PageMotionWrapper } from '../../shared';
 
+import { getContent } from '../../store/ui/selectors';
+
+const StyledRow = styled(Row)`
+  justify-content: center;
+
+  .col {
+    text-align: center;
+  }
+`;
+
+const StyledLink = styled.span`
+  font-weight: 800;
+  text-align: center;
+  font-size: 1rem;
+`;
+
+const StyledNavLink = styled(NavLink)`
+  &.active {
+    .left:before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      bottom: -2px;
+      left: 0;
+      background-color: #000000;
+      visibility: visible;
+      transition: all 0.3s ease-in-out;
+    };
+  }
+`;
+
 const CaseStudy = () => {
-  // let { id } = useParams();
+  const { slug } = useParams();
+  const caseStudy = useSelector((state) => getContent(state, {type: "caseStudy", key: slug }))
+
 
   return (
     <PageMotionWrapper>
-      <Landing type="case-study">
+      <Landing type="case-study" start>
         <h5>Case Study:</h5>
-        <h1>Light Nostalgia</h1>
+        <h1>{caseStudy.title}</h1>
       </Landing>
       <TextSection>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+         {caseStudy.intro.p[0]}
         </p>
-      </TextSection>
-      <TextSection title="stack">
-        <p>Shopify</p>
       </TextSection>
       <ImageContainer />
-      <TextSection title="purpose">
+      <TextSection title="result">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          {caseStudy.result.p[0]}
         </p>
       </TextSection>
-      <Row>
-        <Col>
-          <Row>
-            <ImageContainer />
-          </Row>
-          <Row>
-            <ImageContainer />
-          </Row>
-        </Col>
-        <Col>
-          <ImageContainer />
-        </Col>
-      </Row>
-      <Row>
+      {caseStudy.planned && (
+      <TextSection title="planned">
+            {caseStudy.planned.p.map((p) => (<p>{p}</p>))}
+      </TextSection>
+      )}
+      <ImageContainer/>
         <TextSection title="other projects">
-          <ul>
-            <li>
-              <Link to="/">Link 1</Link>
-            </li>
-            <li>
-              <Link to="/">Link 2</Link>
-            </li>
-            <li>
-              <Link to="/">Link 3</Link>
-            </li>
-            <li>
-              <Link to="/">Link 4</Link>
-            </li>
-          </ul>
+          <StyledRow>
+            <Col>
+              <StyledNavLink activeClass="active" to="/case-study/blog"><StyledLink className="left">Blog</StyledLink></StyledNavLink>
+            </Col>
+            <Col>
+              <StyledNavLink activeClassName="active" to="/case-study/light-nostalgia"><StyledLink className="left">Light Nostalgia</StyledLink></StyledNavLink>
+            </Col>
+            <Col>
+              <StyledNavLink activeClassName="active" to="/case-study/posh-photo"><StyledLink className="left">Posh Photography</StyledLink></StyledNavLink>
+            </Col>
+            <Col>
+              <StyledNavLink activeClassName="active" to="/case-study/jeff-jones"><StyledLink className="left">Jeff Jones</StyledLink></StyledNavLink>
+            </Col>
+          </StyledRow>
         </TextSection>
-      </Row>
     </PageMotionWrapper>
   );
-};
-
-CaseStudy.propTypes = {
-  setHomeNav: PropTypes.func.isRequired,
 };
 
 export default CaseStudy;

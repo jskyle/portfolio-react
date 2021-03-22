@@ -8,6 +8,8 @@ var corsOptions = {
   origin: "http://localhost:3000"
 };
 
+app.use(express.static(path.join(__dirname, 'build')));
+
 app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
@@ -19,7 +21,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // database
 const db = require("./models");
 const Role = db.role;
-const User = db.user;
 
 // db.sequelize.sync();
 // force: true will drop the table if it already exists
@@ -29,14 +30,15 @@ db.sequelize.sync({ force: true }).then(() => {
 });
 
 // simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 // routes
 require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
 require('./routes/blog_routes/post.routes')(app);
+require('./routes/external.routes')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { useSelector } from "react-redux"
 import { AnimatePresence } from "framer-motion"
 import "./App.sass";
 import {
@@ -17,22 +19,38 @@ import { Navigation } from "./shared";
 
 // utils
 import { PrivateRoute, ScrollToTop } from "./utils";
+import { overlay } from "./store/ui/selectors"
+
+const StyledContainer = styled(Container)`
+  position: relative;
+  ${(props) => (props.overlay ? `
+    margin-left: initial;
+    margin-right: initial;
+    padding: 0;
+    margin: 0;
+  `: null)}
+`;
+
 
 const App = () => {
+  const overlay_ = useSelector(overlay()) ? "true" : "";
+
   return (
     <Router>
       <ScrollToTop />
       <div>
-        <Navigation />
+        {/* <Navigation overlay={overlay_}/> */}
       </div>
-      <Container style={{position: "relative"}}>
+      <StyledContainer overlay={overlay_}>
         <AnimatePresence>
           <Switch location={location} key={location.pathname}>
-            <Route path="/case-study/:id" component={CaseStudy} />
+            <Route path="/case-study/:slug" component={CaseStudy} />
             <Route path="/blog" component={Blog} />
             <Route path="/blog-post/:id/:slug" component={BlogPost} />
-            <PrivateRoute path="/create-post/" component={PostEditor} />
-            <Route path="/user-login" component={Login} />
+            <PrivateRoute path="/create-post">
+              <PostEditor/>
+            </PrivateRoute>
+            <Route path="/login" component={Login} />
             <Route path="/portfolio" component={Home} />
             <Route path="/skill/:type" component={Skill}/>
             <Route exact path="/">
@@ -40,7 +58,7 @@ const App = () => {
             </Route>
           </Switch>
         </AnimatePresence>
-      </Container>
+      </StyledContainer>
     </Router>
   );
 };

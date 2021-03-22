@@ -4,10 +4,9 @@ import { TextSection } from '../../../shared';
 import IndPostResult from './IndPostResult';
 
 const PostResults = ({ posts }) => {
-  console.log(posts);
   return (
   <TextSection title="posts:">
-    { posts.map((post) => <IndPostResult post={post}/>)}
+    { posts.map((post, idx) => <IndPostResult post={post} key={idx}/>)}
   </TextSection>
 )};
 

@@ -4,7 +4,7 @@ import './BlogPost.sass';
 import { useParams } from 'react-router-dom';
 
 // components
-import { Landing, RenderDraft, PageMotionWrapper, LoadingWrapper } from '../../../shared';
+import { Landing, RenderDraft, PageMotionWrapper } from '../../../shared';
 
 // redux
 import { getPost } from "../../../store/blog/selectors";
@@ -24,12 +24,14 @@ const BlogPost = () => {
         setLoading(false);
       });  
     }
+     if (post) {
+        setLoading(false);
+    }
   }, [post])
 
   const raw = isLoading ? false : JSON.parse(post.content);
 
  return ( 
-   <LoadingWrapper loading={isLoading}>
     <PageMotionWrapper>
       <Landing secondary>
         <h5>post:</h5>
@@ -39,7 +41,6 @@ const BlogPost = () => {
         <RenderDraft raw={raw}/>
       </div>
     </PageMotionWrapper>
-   </LoadingWrapper>
 )};
 
 export default BlogPost;

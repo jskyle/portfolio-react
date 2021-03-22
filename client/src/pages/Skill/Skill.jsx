@@ -17,6 +17,10 @@ const StyledWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: black;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1000;
   color: white;
 
@@ -89,7 +93,7 @@ const Skill = () => {
   const content = useSelector((state) => getContent(state, { type: "skills", key: type }))
 
   useEffect(() => {
-    dispatch(setSetting({ setting: "overrideScrollTo", value: true }));
+    dispatch(setSetting({ setting: "overlay", value: true }));
   }, [])
 
   return (
@@ -97,8 +101,8 @@ const Skill = () => {
     <StyledWrapper>
       <div id="skill-header">
         <h1>{content.title}</h1>
-        <Link to="/portfolio">
-          <FontAwesomeIcon icon={faTimes} color="white" />
+        <Link to="/portfolio" onClick={() => dispatch(setSetting({ setting: "overlay", value: false }))}>
+          <FontAwesomeIcon icon={faTimes} color="white"/>
         </Link>
       </div>
       <div id="skill-body">

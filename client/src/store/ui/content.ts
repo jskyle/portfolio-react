@@ -105,15 +105,74 @@ export const content = {
       ],
     },
   },
-  caseStudies: {
-    lightNostalgia: {
+  caseStudy: {
+    blog: {
+      title: "blog",
+      url: "/blog",
+      intro: {
+        p: [
+          "My personal blog accomplishes two main goals. First, I wanted a home base for my digital presence, somewhere free from pay walls and advertising that would represent me well. Second, I wanted something to flex my full stack muscles The front end is built using React and Redux, with the back end written in Node.js using Express. The data is being stored in a SQL database."
+        ],
+      },
+      result: {
+        title: "result",
+        p: [
+          "The portfolio is everything I wanted and then some. It has user authentication through JWT, a fully fledged text editor built using Draft.js, with the actually content being rendered using a rendering library, I structured the front end store, and database to allow me to easily expand it with each version to come in the future."
+        ],
+      },
 
+      planned: {
+        title: "planned",
+        p: [
+          'Version 2 will come in mid April. Allowing user accounts, post tagging, comments and likes. I will also add accessibilities features, SEO and most importantly dark mode.',
+          'Version 3 is coming at the end of June. Post searching and filtering will be added, a post idea voting system, and a store for digital products that will benefit my readers.',
+        ],
+      }
     },
-    Posh: {
-
+    lightNostalgia: {
+      title: "Light Nostalgia",
+      url: "https://lightnostalgia.myshopify.com/password",
+      intro: {
+        p: [
+          "Light nostalgia is a candle company focused around the environment and making memories last. The founder reached out to build out their online store, giving me technical control with a beautiful design to work off.",
+        ],
+      },
+      result: {
+        title: "result",
+        p: [
+          "A beautiful, user friendly experience with an engaging gradient background throughout. I picked Shopify as the platform to build it on. Shopify allowed them to make minor revisions with out needing my assistance, and it gave them the tools to build their brand. Technically speaking, most of my work focused around modifying the theme using css, javascript, and ruby.",
+        ],
+      },
+    },
+    poshPhoto: {
+      title: "Posh Photography",
+      url:"https://hireposh.com/",
+      intro: {
+        p: [
+          "A well styled and well executed portfolio for my mom to showcase some of her amazing photos. I wanted to help support her dreams of photography as she supported all my dreams growing up. She always made sure I never went without growing up, and I would not have accomplished any of the things I have with out her.",
+        ],
+      },
+      result: {
+        title: "result",
+        p: [
+          "While a simple website in terms of stack (HTML, CSS, some javascript), it is a well executed website in terms of styling and responsiveness. It was a lot of fun getting to partner with my mom and watch her face light up as the pieces were coming together.",
+        ],
+      },
     },
     jeffJones: {
-
+      title: "Jeff Jones",
+      url: "http://jonesbodywork.com/",
+      intro: {
+        p: [
+          "Jeff Jones is a body worker in Denver, CO. A great friend, and one of my first freelance clients. We connected through a networking group and he gave me the opportunity to redevelop his website to suit his brand. Jeff Jones can be summed up as a unique, down to earth, minimalist., who cares deeply about his clients. I wanted to make sure our redesign brought all of his personality together into a website.",
+        ],
+      },
+      result: {
+        title: "result",
+        p: [
+          "A simple stack website (HTML, CSS, a small amount of PHP for handling emails)  that fits his needs perfectly. A very responsive and user friendly experience, that combines his Colorado hora with his customer focused approach.",
+        ],
+      },
     },
   },
   quotes: [

@@ -95,12 +95,12 @@ const SocialRow = () => {
           <FontAwesomeIcon icon={faEnvelope} color="black" size="sm" />
         </Card>
       </a>
-      <a href="https://github.com/kyledarrion">
+      <a href="https://github.com/kyledkearney" target="_blank" rel="noopener noreferrer">
         <Card className="github">
           <FontAwesomeIcon icon={faGithub} color="black" size="sm" />
         </Card>
       </a>
-      <a href="https://www.linkedin.com/in/kyle-kearney-2b3b67b4/">
+      <a href="https://www.linkedin.com/in/kyle-kearney-2b3b67b4/" target="_blank" rel="noopener noreferrer">
         <Card className="linkedin">
           <FontAwesomeIcon icon={faLinkedin} color="black" size="sm" />
         </Card>
@@ -111,11 +111,11 @@ const SocialRow = () => {
         </Card>
       </a>
 
-      <a href="https://twitter.com/kyledarrion" target="_blank" rel="noopener noreferrer">
+      {/* <a href="https://twitter.com/kyledarrion" target="_blank" rel="noopener noreferrer">
         <Card className="twitter">
           <FontAwesomeIcon icon={faTwitter} color="black" size="sm" />
         </Card>
-      </a>
+      </a> */}
     </StyledSocialRow>
   );
 }

@@ -12,6 +12,8 @@ export const navType = createSelector("navType")
 
 export const content = createSelector("content")
 
+export const overlay = createSelector("overlay")
+
 export const getContent = createCachedSelector(
   content,
   (_: any, item: any) => item, 

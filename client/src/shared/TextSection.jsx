@@ -18,7 +18,6 @@ const TextSection = ({ children, title }) => (
 
 TextSection.propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired,
 };
 
 export default TextSection;

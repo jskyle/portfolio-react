@@ -53,6 +53,7 @@ const StyledNav = styled.nav`
 `;
 
 const HeaderBar = styled.div`
+  display: ${(props) => (props.overlay ? 'none' : 'initial')};
   position: fixed;
   top: 0;
   left: 0;
@@ -92,7 +93,7 @@ const StyledUl = styled.ul`
     }
 `;
 
-const Navigation = ({ type }) => {
+const Navigation = ({ overlay }) => {
   const [navOpen, toggleNavOpen] = useState(false);
 
   const toggle = () => {
@@ -119,7 +120,7 @@ const Navigation = ({ type }) => {
         </li> */}
         <li>
           <NavLink activeClassName="active" to="/blog" onClick={toggle}>
-            <span className="left">journal</span>
+            <span className="left">blog</span>
           </NavLink>
         </li>
         {/* <li id="connect-link">
@@ -136,8 +137,8 @@ const Navigation = ({ type }) => {
 
   return (
     <>
-      <HeaderBar>
-        <Link to="/"><h4><span className="left">{!type || navOpen ? 'Kyle Kearney' : ''}</span></h4></Link>
+      <HeaderBar overlay={overlay}>
+        <Link to="/"><h4><span className="left">Kyle Kearney</span></h4></Link>
         <Button className="header-bar-nav-button" color="link" onClick={toggle}><Hamburger toggle={toggle} toggled={navOpen} onToggle={toggle} hideOutline label="navigation menu" /></Button>
       </HeaderBar>
       {navScreen}

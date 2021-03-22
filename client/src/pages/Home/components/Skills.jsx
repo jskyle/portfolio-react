@@ -15,7 +15,6 @@ const Skills = () => {
           <div id="skills-list-container">
             <Link to="/skill/front-end" className="skills-button" ><span className="left">Front End</span></Link>
             <Link to="/skill/back-end" className="skills-button" ><span className="left">Back End</span></Link>
-            <Link to="/skill/dev-ops" className="skills-button" ><span className="left">Dev Ops</span></Link>
             <Link to="/skill/design" className="skills-button"><span className="left">Design</span></Link>
           </div>
         </div>

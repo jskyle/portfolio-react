@@ -22,8 +22,8 @@ const Connect = () => {
   const [status, setStatus] = useState('Initial');
 
   const handleSubmit = () => {
-    axios.post('/api/message', formState).then((res) => {
-      setStatus(res.data.status);
+    axios.post('/api/contact/send', formState).then(() => {
+      setStatus('Sent');
       setFormState({
         name: '',
         email: '',
@@ -33,6 +33,8 @@ const Connect = () => {
       setTimeout(() => {
         setStatus('Initial');
       }, 10000);
+    }).catch(() => {
+      setStatus('Failed');
     });
   };
 
