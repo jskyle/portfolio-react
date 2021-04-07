@@ -119,10 +119,16 @@ const Home = () => {
       <Work>
         <ul>
           <li>
+            <a href="https://frenchsquirrel.com/" target="_blank" rel="norefferer noopener"><span className="left-big">French Squirrel</span></a>
+          </li>
+          <li>
             <a href="https://boosterapps.com/" target="_blank" rel="norefferer noopener"><span className="left-big">Booster Apps</span></a>
           </li>
           <li>
             <a href="http://barnhousetap.com/" target="_blank" rel="norefferer noopener"><span className="left-big">Barn House Tap</span></a>
+          </li>
+          <li>
+            <a href="http://jonesbodywork.com" target="_blank" rel="norefferer noopener"><span className="left-big">Posh Photo</span></a>
           </li>
           <li>
             <a href="http://jonesbodywork.com" target="_blank" rel="norefferer noopener"><span className="left-big">Jones Bodywork</span></a>

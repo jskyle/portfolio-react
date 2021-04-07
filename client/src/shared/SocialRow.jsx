@@ -105,11 +105,11 @@ const SocialRow = () => {
           <FontAwesomeIcon icon={faLinkedin} color="black" size="sm" />
         </Card>
       </a>
-      <a href="https://instagram.com/kyledarrion" target="_blank" rel="noopener noreferrer">
+      {/* <a href="https://instagram.com/kyledarrion" target="_blank" rel="noopener noreferrer">
         <Card className="instagram">
           <FontAwesomeIcon icon={faInstagram} color="black" size="sm" />
         </Card>
-      </a>
+      </a> */}
 
       {/* <a href="https://twitter.com/kyledarrion" target="_blank" rel="noopener noreferrer">
         <Card className="twitter">
