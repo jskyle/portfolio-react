@@ -12,7 +12,7 @@ import {
 import { Container } from "reactstrap";
 
 // pages
-import {Home, Login, Blog, BlogPost, PostEditor, CaseStudy, Skill} from "./pages"
+import {Home, Login, CaseStudy, Skill} from "./pages"
 
 // components
 import { Navigation } from "./shared";
@@ -45,11 +45,6 @@ const App = () => {
         <AnimatePresence>
           <Switch location={location} key={location.pathname}>
             <Route path="/case-study/:slug" component={CaseStudy} />
-            <Route path="/blog" component={Blog} />
-            <Route path="/blog-post/:id/:slug" component={BlogPost} />
-            <PrivateRoute path="/create-post">
-              <PostEditor/>
-            </PrivateRoute>
             <Route path="/login" component={Login} />
             <Route path="/portfolio" component={Home} />
             <Route path="/skill/:type" component={Skill}/>
