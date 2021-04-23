@@ -22,7 +22,7 @@ const Connect = () => {
   const [status, setStatus] = useState('Initial');
 
   const handleSubmit = () => {
-    axios.post('/api/contact/send', formState).then(() => {
+    axios.post('http://localhost:5001/portfolio-react-2021/us-central1/api/contact/send', formState).then(() => {
       setStatus('Sent');
       setFormState({
         name: '',

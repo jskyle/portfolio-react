@@ -1,4 +1,3 @@
-import PrivateRoute from "./PrivateRoute";
 import ScrollToTop from "./ScrollToTop";
 import Emoji from "./Emoji"
 
@@ -22,4 +21,4 @@ export const formatDate = (date: any) => {
 }
 
 
-export { PrivateRoute, ScrollToTop, Emoji};
+export { ScrollToTop, Emoji};

@@ -12,13 +12,13 @@ import {
 import { Container } from "reactstrap";
 
 // pages
-import {Home, Login, CaseStudy, Skill} from "./pages"
+import {Home, CaseStudy, Skill} from "./pages"
 
 // components
 import { Navigation } from "./shared";
 
 // utils
-import { PrivateRoute, ScrollToTop } from "./utils";
+import { ScrollToTop } from "./utils";
 import { overlay } from "./store/ui/selectors"
 
 const StyledContainer = styled(Container)`
@@ -45,12 +45,9 @@ const App = () => {
         <AnimatePresence>
           <Switch location={location} key={location.pathname}>
             <Route path="/case-study/:slug" component={CaseStudy} />
-            <Route path="/login" component={Login} />
-            <Route path="/portfolio" component={Home} />
             <Route path="/skill/:type" component={Skill}/>
-            <Route exact path="/">
-              <Redirect to="/portfolio" />
-            </Route>
+            <Route path="/" component={Home} />
+
           </Switch>
         </AnimatePresence>
       </StyledContainer>
