@@ -1,48 +1,40 @@
 const functions = require("firebase-functions");
 const express = require("express");
-const bodyParser = require("body-parser");
-const path = require("path");
-const cors = require("cors");
-
 const app = express();
+const env = require("dotenv");
+const nodemailer = require("nodemailer");
+const cors = require("cors")({origin: true});
 
-const corsOptions = {
-  origin: "http://localhost:3000",
-};
+env.config();
 
-app.use(express.static(path.resolve(__dirname, "../client/build")));
+app.use(cors);
+
+const contactEmail = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.SEND_EMAIL,
+    pass: process.env.EMAIL_PASSWORD,
+  },
+});
 
 
-app.use(cors(corsOptions));
+app.post("/send", (req, res) => {
+  const {name, email, message} = req.body;
 
-// parse requests of content-type - application/json
-app.use(bodyParser.json());
+  const mail = {
+    from: email,
+    to: process.env.RECIEVE_EMAIL,
+    subject: `Message from: ${name} `,
+    html: `<p>name: ${name}</p><p>email: ${email}</p><p>note: ${message}</p>`,
+  };
 
-// parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({extended: true}));
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.status(500).send(error);
+    } else {
+      res.status(200).send();
+    }
+  });
+});
 
-// database
-
-// simple route
-
-// routes
-require("./routes/external.routes")(app);
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../client/build", "index.html"));
-// });
-// // set port, listen for requests
-// const PORT = process.env.PORT || 8080;
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}.`);
-// });
-
-exports.api = functions.https.onRequest(app);
-
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+exports.app = functions.https.onRequest(app);

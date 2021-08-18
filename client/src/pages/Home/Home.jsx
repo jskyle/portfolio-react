@@ -57,7 +57,7 @@ const StyledToolTip = styled(UncontrolledTooltip)`
 `;
 
 const Home = () => {
-  const subTitles = ['front end web developer', 'software engineer', 'ui engineer', 'react artisan', 'digital creator', 'book worm', 'economics enthusiast'];
+  const subTitles = ['Full stack web developer', 'software engineer', 'ui engineer', 'Certified Scrum Master', 'react artisan', 'digital creator', 'book worm', 'economics enthusiast'];
 
 
   return (
@@ -70,7 +70,7 @@ const Home = () => {
       </Landing>
       <div id="about-section">
         <TextSection title="about">
-          <p>Hi there! <Emoji symbol="👋 " label="wave" id="cliche-wave"/>My name is Kyle Kearney! I am a <Bold>developer</Bold>, designer, digital creator, lover of books and quirky economic facts. I am currently working remotely for a sms lead generation SaaS platform. My day to day tasks include <Bold>managing millions of records</Bold> and <Bold>developing pixel perfect components</Bold> in React. I have had the pleasure of working with a large variety of companies in my <Bold>5 years of experience.</Bold> From <Bold id="shopify-flex">Shopify apps seen by millions everyday</Bold>, to <Bold>enterprise systems for nation wide organizations.</Bold> I have had the pleasure of being a part of some wonderful projects.</p>
+          <p>Hi there! <Emoji symbol="👋 " label="wave" id="cliche-wave"/>My name is Kyle Kearney! I am a <Bold>developer</Bold>, designer, lover of books and quirky economic facts. I am currently working remotely for a sms lead generation SaaS platform. My day to day tasks include <Bold>managing millions of records</Bold> and <Bold>developing pixel perfect components</Bold> in React. I have had the pleasure of working with a large variety of companies in my <Bold>4 years of experience.</Bold> From <Bold id="shopify-flex">Shopify apps seen by millions everyday</Bold>, to <Bold>enterprise systems for nation wide organizations.</Bold> I have had the pleasure of being a part of some wonderful projects.</p>
           <p>While many of my professional roles have been <Bold className="left" id="frontend">front end</Bold> focused. I bring a well rounded skillset to the table including <Bold className="left" id="database">database technologies</Bold>, <Bold className="left" id="backend">backend languages</Bold> and project management skills as well. I hold a <Bold>certificate</Bold> for <Bold>full stack development</Bold> from the <Bold>University of Denver.</Bold> I love working on challenging, high demand and high impact projects. Tight deadlines and high energy environments cultivate my energy. I work best under the proverbial <Emoji symbol="🔫" label="gun" id="gun"/> you could say.</p>
           <p>Outside of my current role you can find me <Bold>producing digital content</Bold>, <Bold>developing apps and games</Bold>, and practicing self creation. I am up early, reading a lot of <Emoji symbol="📚" label="books" id="books"/>, and <Emoji symbol="🧘🏻‍♂️" label="yoga" id="yoga"/>-ing  like there is no tomorrow. You can <Bold>checkout my current projects</Bold> on my <a href="https://github.com/kyledkearney" target="_blank" rel="noopener noreferrer"><Bold className="left" pointer="pointer">GitHub.</Bold></a> As I finish them you can find them down below in my <ScrollLink to="work-section" spy={true} smooth={true} offset={50} duration={500}><Bold className="left" pointer="pointer">work section</Bold></ScrollLink>, and read about them in my <Link to="/blog"><Bold className="left" pointer="pointer">blog</Bold></Link>. If you have a question, looking for a <Emoji symbol="🧑🏻‍💻" label="developer" id="developer"/>, or a friend feel free to <ScrollLink to="connect-section" spy={true} smooth={true} offset={50} duration={500}><Bold className="left" pointer="pointer">reach out.</Bold></ScrollLink></p>
           <p>Dream big, do good.</p>
@@ -101,7 +101,7 @@ const Home = () => {
         <StyledToolTip placement="top" target="backend">
           <ul>
             <li>Node</li>
-            <li>Php</li>
+            <li>Python</li>
             <li>Ruby</li>
           </ul>
         </StyledToolTip>
@@ -112,7 +112,7 @@ const Home = () => {
             <li>Javascript</li>
             <li>React</li>
             <li>Angular</li>
-            <li>Bootstap</li>
+            <li>Bootstrap</li>
           </ul>
         </StyledToolTip>
       </div>
@@ -136,7 +136,7 @@ const Home = () => {
         </ul>
       </Work>
       {/* <Skills /> */}
-      <Connect />
+      {/* <Connect /> */}
     </PageMotionWrapper>
   );
 };

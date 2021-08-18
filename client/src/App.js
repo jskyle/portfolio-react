@@ -7,15 +7,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
 } from "react-router-dom";
 import { Container } from "reactstrap";
 
 // pages
 import {Home, CaseStudy, Skill} from "./pages"
-
-// components
-import { Navigation } from "./shared";
 
 // utils
 import { ScrollToTop } from "./utils";
@@ -47,7 +43,6 @@ const App = () => {
             <Route path="/case-study/:slug" component={CaseStudy} />
             <Route path="/skill/:type" component={Skill}/>
             <Route path="/" component={Home} />
-
           </Switch>
         </AnimatePresence>
       </StyledContainer>
