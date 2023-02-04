@@ -7,7 +7,7 @@ const TextSection = ({ children, title }) => (
   <div className="section-container">
     { title ? (
       <div className="text-section-head-container">
-        <h4 className="section-head">{title}</h4>
+        <h2 className="section-head">{title}</h2>
       </div>
     ) : null }
     <div className="text-section-body">

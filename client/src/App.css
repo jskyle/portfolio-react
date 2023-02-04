@@ -44,7 +44,7 @@
 }
 
 .section-head {
-  font-size: 4rem;
+  font-size: 64px;
   letter-spacing: -0.1rem;
   margin-bottom: 0rem;
 }
@@ -69,18 +69,32 @@ button {
 }
 
 h1,
-h4,
-.nav-link {
+h2,
+.extrabold-font {
   font-weight: 800;
 }
 
+
 h5,
-h6 {
+h6,
+.medium-font {
   font-weight: 500;
 }
 
-p {
+
+p, 
+.regular-font {
+font-weight: 400;
+}
+
+
+.light-font {
   font-weight: 300;
+}
+
+h3,
+.extralight-font {
+  font-weight: 200;
 }
 
 a {

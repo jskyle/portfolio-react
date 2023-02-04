@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Container } from "reactstrap";
+
 import { UncontrolledTooltip } from "reactstrap";
 import { Emoji } from "../../../utils";
 import { TextSection } from "../../../shared";
@@ -49,12 +49,10 @@ const StyledToolTip = styled(UncontrolledTooltip)`
   }
 `;
 
-export const StyledContainer = styled(Container)`
-  position: relative;
-`;
+
 
 const About = () => (
-  <StyledContainer id="about-section">
+  <div id="about-section">
     <TextSection title="about">
       <p>
         Hi there! <Emoji symbol="👋 " label="wave" id="cliche-wave" />
@@ -171,7 +169,7 @@ const About = () => (
         <li>Bootstrap</li>
       </ul>
     </StyledToolTip>
-  </StyledContainer>
+  </div>
 );
 
 export default About;
