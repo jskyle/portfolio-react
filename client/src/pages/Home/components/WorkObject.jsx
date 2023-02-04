@@ -7,10 +7,10 @@ const WorkObject = () => {
     <>
       <h3>Economic Impact of Data</h3>
       <h6>
-        <span>Roles:</span>{" "}
-        <span>Project Manager / Web specialist / developer</span>
+        <span className="bold-font">Roles:</span>{" "}
+        <span className="light-font">Project Manager / Web specialist / developer</span>
       </h6>
-      <h6>Timeline: October, 2022</h6>
+      <h6> October, 2022</h6>
       <h6>Technologies: AEM, Javascript, HTMl, CSS</h6>
       <p>
         {" "}

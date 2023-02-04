@@ -55,6 +55,14 @@ ul {
   padding-left: 0;
 }
 
+h3 {
+ font-size: 48px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
 h1,
 h2,
 h3,
@@ -72,6 +80,10 @@ h1,
 h2,
 .extrabold-font {
   font-weight: 800;
+}
+
+.bold-font {
+  font-weight: 700;
 }
 
 
