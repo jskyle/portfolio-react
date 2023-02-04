@@ -1,4 +1,5 @@
-import Work from './Work';
+import About from "./About";
 import Connect from './Connect';
+import Work from './Work';
 
-export { Work, Connect };
+export { About, Connect, Work };
