@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const getInArity2 = (
   path,
   map
@@ -22,11 +20,6 @@ export const getIn = (
 };
 
 export const identity = (x) => x;
-
-
-const baseURL = process.env.REACT_APP_BASE_URL;
-
-export const axiosInstance = axios.create({ baseURL });
 
 export const createAction = (type, payloadKey = 'payload') => {
   const action = (payload, meta = {}) => ({

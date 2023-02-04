@@ -1,7 +1,7 @@
 /* eslint-disable-next-line */
 import React from 'react';
 import styled from 'styled-components';
-import './styles/Footer.sass';
+import './styles/Footer.css';
 
 const StyledFooter = styled.footer`
   z-index: 1;

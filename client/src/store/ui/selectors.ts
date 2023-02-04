@@ -4,15 +4,9 @@ import { createSelectorContext, snakeToCamel } from "../utils";
 
 const createSelector = createSelectorContext(["ui"]);
 
-export const overrideScrollTo = createSelector("overrideScrollto");
-
 export const darkMode = createSelector("darkMode")
 
-export const navType = createSelector("navType")
-
 export const content = createSelector("content")
-
-export const overlay = createSelector("overlay")
 
 export const getContent = createCachedSelector(
   content,

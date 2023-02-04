@@ -1,6 +1,6 @@
 /* eslint-disable-next-line */
 import React from 'react';
-import './styles/TextSection.sass';
+import './styles/TextSection.css';
 import PropTypes from 'prop-types';
 
 const TextSection = ({ children, title }) => (

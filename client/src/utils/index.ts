@@ -1,4 +1,4 @@
-import ScrollToTop from "./ScrollToTop";
+
 import Emoji from "./Emoji"
 
 export const convertArrayToObject = (array: Array<any>, key: any) => {
@@ -21,4 +21,4 @@ export const formatDate = (date: any) => {
 }
 
 
-export { ScrollToTop, Emoji};
+export {Emoji};

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './styles/Work.sass';
+import './styles/Work.css';
 import styled from 'styled-components';
 
 

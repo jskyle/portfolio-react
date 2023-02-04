@@ -1,15 +1,11 @@
 /* eslint-disable max-len */
 /* eslint-disable-next-line */
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { UncontrolledTooltip } from 'reactstrap';
-import { Link as ScrollLink } from "react-scroll";
-import ReactRotatingText from 'react-rotating-text';
-import { Work, Skills, Connect } from './components/index';
-import { Landing, TextSection, PageMotionWrapper } from '../../shared';
-import { Emoji } from '../../utils';
-
+import React from "react";
+import styled from "styled-components";
+import { UncontrolledTooltip } from "reactstrap";
+import { Work, Skills, Connect } from "./components/index";
+import { Landing, TextSection, PageMotionWrapper } from "../../shared";
+import { Emoji } from "../../utils";
 
 const Bold = styled.strong`
   font-weight: 600;
@@ -28,9 +24,8 @@ const Bold = styled.strong`
     background-color: #000000;
     visibility: visible;
     transition: all 0.3s ease-in-out;
-  };
+  }
 `;
-
 
 const StyledToolTip = styled(UncontrolledTooltip)`
 
@@ -57,22 +52,100 @@ const StyledToolTip = styled(UncontrolledTooltip)`
 `;
 
 const Home = () => {
-  const subTitles = ['Full stack web developer', 'software engineer', 'ui engineer', 'Certified Scrum Master', 'react artisan', 'digital creator', 'book worm', 'economics enthusiast'];
-
+  const subTitles = [
+    "Full stack web developer",
+    "software engineer",
+    "ui engineer",
+    "Certified Scrum Master",
+    "Certified Product Owner",
+    "react artisan",
+    "book worm",
+    "economics enthusiast",
+  ];
 
   return (
-    <PageMotionWrapper>
+    <>
       <Landing type="home">
         <h1>Kyle Kearney</h1>
-        <h6 className="sub-header rotate-1">
-          <ReactRotatingText items={subTitles} />
-        </h6>
+        <h6 className="sub-header rotate-1">ui engineer</h6>
       </Landing>
       <div id="about-section">
         <TextSection title="about">
-          <p>Hi there! <Emoji symbol="👋 " label="wave" id="cliche-wave"/>My name is Kyle Kearney! I am a <Bold>developer</Bold>, designer, lover of books and quirky economic facts. I am currently working remotely for a sms lead generation SaaS platform. My day to day tasks include <Bold>managing millions of records</Bold> and <Bold>developing pixel perfect components</Bold> in React. I have had the pleasure of working with a large variety of companies in my <Bold>4 years of experience.</Bold> From <Bold id="shopify-flex">Shopify apps seen by millions everyday</Bold>, to <Bold>enterprise systems for nation wide organizations.</Bold> I have had the pleasure of being a part of some wonderful projects.</p>
-          <p>While many of my professional roles have been <Bold className="left" id="frontend">front end</Bold> focused. I bring a well rounded skillset to the table including <Bold className="left" id="database">database technologies</Bold>, <Bold className="left" id="backend">backend languages</Bold> and project management skills as well. I hold a <Bold>certificate</Bold> for <Bold>full stack development</Bold> from the <Bold>University of Denver.</Bold> I love working on challenging, high demand and high impact projects. Tight deadlines and high energy environments cultivate my energy. I work best under the proverbial <Emoji symbol="🔫" label="gun" id="gun"/> you could say.</p>
-          <p>Outside of my current role you can find me <Bold>producing digital content</Bold>, <Bold>developing apps and games</Bold>, and practicing self creation. I am up early, reading a lot of <Emoji symbol="📚" label="books" id="books"/>, and <Emoji symbol="🧘🏻‍♂️" label="yoga" id="yoga"/>-ing  like there is no tomorrow. You can <Bold>checkout my current projects</Bold> on my <a href="https://github.com/kyledkearney" target="_blank" rel="noopener noreferrer"><Bold className="left" pointer="pointer">GitHub.</Bold></a> As I finish them you can find them down below in my <ScrollLink to="work-section" spy={true} smooth={true} offset={50} duration={500}><Bold className="left" pointer="pointer">work section</Bold></ScrollLink>, and read about them in my <Link to="/blog"><Bold className="left" pointer="pointer">blog</Bold></Link>. If you have a question, looking for a <Emoji symbol="🧑🏻‍💻" label="developer" id="developer"/>, or a friend feel free to <ScrollLink to="connect-section" spy={true} smooth={true} offset={50} duration={500}><Bold className="left" pointer="pointer">reach out.</Bold></ScrollLink></p>
+          <p>
+            Hi there! <Emoji symbol="👋 " label="wave" id="cliche-wave" />
+            My name is Kyle Kearney! I am a <Bold>front end engineer</Bold>,
+            Certified Scrum Master, lover of books and quirky economic facts. I
+            am currently working as a lead front end engineer remotely for a sms
+            lead generation SaaS platform. My day to day tasks include{" "}
+            <Bold>designing our system architecture</Bold> and{" "}
+            <Bold>overseeing the work of 12 engineers</Bold>. I have had the
+            pleasure of working with a large variety of companies over my{" "}
+            <Bold>6+ year career</Bold> From managing Splunk's web effort for
+            their{" "}
+            <a
+              href="https://conf.splunk.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              yearly conference
+            </a>{" "}
+            and global campaigns.
+            <Bold id="shopify-flex">
+              Developing Shopify apps seen by millions everyday
+            </Bold>
+            , to <Bold>enterprise systems for nation wide organizations.</Bold>{" "}
+            I have had the pleasure of being a part of some wonderful teams.
+          </p>
+          <p>
+            While many of my professional roles have been{" "}
+            <Bold className="left" id="frontend">
+              front end
+            </Bold>{" "}
+            focused. I bring a well rounded skillset to the table including{" "}
+            Scrum Certifications
+            <Bold className="left" id="database">
+              database technologies
+            </Bold>
+            ,{" "}
+            <Bold className="left" id="backend">
+              backend languages
+            </Bold>{" "}
+            and 3 years managing teams and projects. I hold a{" "}
+            <Bold>certificate</Bold> for <Bold>full stack development</Bold>{" "}
+            from the <Bold>University of Denver.</Bold> I love working on
+            challenging, high demand and high impact projects. Tight deadlines
+            and high energy environments cultivate my energy. I work best under
+            the proverbial <Emoji symbol="🔫" label="gun" id="gun" /> you could
+            say.
+          </p>
+          <p>
+            Outside of my current role you can find me{" "}
+            <Bold>developing apps and games</Bold>, cooking or training for my
+            first triathlon. I am up early, reading a lot of{" "}
+            <Emoji symbol="📚" label="books" id="books" />, and{" "}
+            <Emoji symbol="🧘🏻‍♂️" label="yoga" id="yoga" />
+            -ing like there is no tomorrow. You can{" "}
+            <Bold>checkout my current projects</Bold> on my{" "}
+            <a
+              href="https://github.com/jskyle"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Bold className="left" pointer="pointer">
+                GitHub.
+              </Bold>
+            </a>{" "}
+            As I finish them you can find them down below in my{" "}
+            . If you have a question, looking for a{" "}
+            <Emoji symbol="🧑🏻‍💻" label="developer" id="developer" />, or a friend
+            feel free to{" "}
+            <a href="mailto:hello@kyleswork.com">
+              <Bold className="left" pointer="pointer">
+                reach out
+              </Bold>
+            </a>
+            .
+          </p>
           <p>Dream big, do good.</p>
         </TextSection>
         <StyledToolTip placement="top" target="cliche-wave">
@@ -119,25 +192,49 @@ const Home = () => {
       <Work>
         <ul>
           <li>
-            <a href="https://frenchsquirrel.com/" target="_blank" rel="norefferer noopener"><span className="left-big">French Squirrel</span></a>
+            <a
+              href="https://frenchsquirrel.com/"
+              target="_blank"
+              rel="norefferer noopener"
+            >
+              <span className="left-big">French Squirrel</span>
+            </a>
           </li>
           <li>
-            <a href="https://boosterapps.com/" target="_blank" rel="norefferer noopener"><span className="left-big">Booster Apps</span></a>
+            <a
+              href="https://boosterapps.com/"
+              target="_blank"
+              rel="norefferer noopener"
+            >
+              <span className="left-big">Booster Apps</span>
+            </a>
           </li>
           <li>
-            <a href="http://barnhousetap.com/" target="_blank" rel="norefferer noopener"><span className="left-big">Barn House Tap</span></a>
+            <a
+              href="http://barnhousetap.com/"
+              target="_blank"
+              rel="norefferer noopener"
+            >
+              <span className="left-big">Barn House Tap</span>
+            </a>
           </li>
           {/* <li>
             <a href="http://jonesbodywork.com" target="_blank" rel="norefferer noopener"><span className="left-big">Posh Photo</span></a>
           </li> */}
           <li>
-            <a href="http://jonesbodywork.com" target="_blank" rel="norefferer noopener"><span className="left-big">Jones Bodywork</span></a>
+            <a
+              href="http://jonesbodywork.com"
+              target="_blank"
+              rel="norefferer noopener"
+            >
+              <span className="left-big">Jones Bodywork</span>
+            </a>
           </li>
         </ul>
       </Work>
       {/* <Skills /> */}
       {/* <Connect /> */}
-    </PageMotionWrapper>
+    </>
   );
 };
 

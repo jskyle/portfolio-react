@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable-next-line */
 import React, { useState } from 'react';
-import './styles/Connect.sass';
+import './styles/Connect.css';
 import {
   Form, Button, FormGroup, Input, Row, Col, Card,
 } from 'reactstrap';
@@ -10,7 +10,6 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub, faInstagram, faTwitter, faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
-import axios from 'axios';
 import { SocialRow } from "../../../shared";
 
 const Connect = () => {
@@ -21,22 +20,7 @@ const Connect = () => {
   });
   const [status, setStatus] = useState('Initial');
 
-  const handleSubmit = () => {
-    axios.post('https://us-central1-portfolio-react-2021.cloudfunctions.net/app/api/send', formState).then(() => {
-      setStatus('Sent');
-      setFormState({
-        name: '',
-        email: '',
-        message: '',
-      });
-
-      setTimeout(() => {
-        setStatus('Initial');
-      }, 10000);
-    }).catch(() => {
-      setStatus('Failed');
-    });
-  };
+  const handleSubmit = () => {};
 
   const statusBody = (
     <div className="connect-status-body">
