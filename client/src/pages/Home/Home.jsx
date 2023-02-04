@@ -45,9 +45,6 @@ const Home = () => {
               <span className="left-big">Barn House Tap</span>
             </a>
           </li>
-          {/* <li>
-            <a href="http://jonesbodywork.com" target="_blank" rel="norefferer noopener"><span className="left-big">Posh Photo</span></a>
-          </li> */}
           <li>
             <a
               href="http://jonesbodywork.com"
@@ -59,7 +56,6 @@ const Home = () => {
           </li>
         </ul>
       </Work>
-      {/* <Skills /> */}
       {/* <Connect /> */}
     </>
   );

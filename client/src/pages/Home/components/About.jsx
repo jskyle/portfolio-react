@@ -49,7 +49,7 @@ const StyledToolTip = styled(UncontrolledTooltip)`
   }
 `;
 
-const StyledContainer = styled(Container)`
+export const StyledContainer = styled(Container)`
   position: relative;
 `;
 

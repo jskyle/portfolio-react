@@ -1,7 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './styles/Work.css';
 import styled from 'styled-components';
+import { StyledContainer } from './About';
+import WorkObject from './WorkObject';
 
 
 const WorkSection = styled.div`
@@ -12,10 +13,16 @@ const WorkSection = styled.div`
     padding-left: 0;
   }
 
-  li {
+  .work-history-container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h5 {
     width: max-content;
     margin-left: 0rem;
-    font-size: 7rem;
+    font-size: 3rem;
   };
 
   @media screen and ( max-width: 991px) {
@@ -44,18 +51,16 @@ const WorkSection = styled.div`
 `;
 
 const Work = ({ children }) => (
-    <WorkSection className="section-container" id="work-section">
+  <WorkSection className="section-container" id="work-section">
+    <StyledContainer>
       <div id="work-head">
         <h4 className="section-head">work</h4>
       </div>
-      <div id="work-body">
-        {children}
-      </div>
-    </WorkSection>
+    </StyledContainer>
+    <div className='work-history-container'>
+      <WorkObject/>
+    </div>
+  </WorkSection>
 );
-
-Work.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default Work;
