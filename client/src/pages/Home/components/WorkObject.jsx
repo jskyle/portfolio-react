@@ -2,24 +2,27 @@ import React from "react";
 import styled from "styled-components";
 
 
-const WorkObject = () => {
+const WorkObject = (project) => {
   return (
     <>
-      <h3>Economic Impact of Data</h3>
+      <h3>{project.name}</h3>
       <h6>
         <span className="bold-font">Roles:</span>{" "}
-        <span className="light-font">Project Manager / Web specialist / developer</span>
+        <span className="light-font">{project.role}</span>
       </h6>
-      <h6> October, 2022</h6>
-      <h6>Technologies: AEM, Javascript, HTMl, CSS</h6>
-      <p>
-        {" "}
-        Economic impact of Data Report was a global marketing campaign. I was
-        tasked with managing and developing the website and various other
-        parties involved (branding, design, content, and translation.) The
-        project was set on a truncated timetable with a desire for custom
-        components and enhanced analytics.{" "}
-      </p>
+      <h6>
+        <span className="bold-font">Company:</span>
+        <span className="light-font">{project.company}</span>
+      </h6>
+      <h6>
+        <span className="bold-font">Timeline:</span>
+        <span className="light-font">{project.timeline}</span>
+      </h6>
+      <h6>
+        <span className="bold-font">Technologies:</span>
+        <span className="light-font">{project.technologies}</span>
+      </h6>
+      <p className="work-body">{project.description}</p>
     </>
   );
 };
