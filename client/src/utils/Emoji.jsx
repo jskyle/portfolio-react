@@ -1,12 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const EmojiSpan = styled.span`
- font-size: 120%;
-`;
 
 const Emoji = props => (
-    <EmojiSpan
+    <span
         className="emoji"
         role="img"
         id={props.id}
@@ -14,6 +9,6 @@ const Emoji = props => (
         aria-hidden={props.label ? "false" : "true"}
     >
         {props.symbol}
-    </EmojiSpan>
+    </span>
 );
 export default Emoji;
