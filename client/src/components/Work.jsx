@@ -1,17 +1,10 @@
 import React from 'react';
-import './styles/Work.css';
-import styled from 'styled-components';
 import WorkObject from './WorkObject';
-
-
-const WorkSection = styled.div`
-  margin-bottom: 10rem;
-`;
 
 const Work = () => {
   
   return (
-  <WorkSection className="section-container" id="work-section">
+  <section id="work-section">
       <div>
         <h2 className="section-head">work</h2>
       </div>
@@ -19,7 +12,7 @@ const Work = () => {
     <div className='work-history-container'>
       <WorkObject/>
     </div>
-  </WorkSection>
+  </section>
 )};
 
 export default Work;

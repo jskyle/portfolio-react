@@ -51,7 +51,7 @@ const StyledToolTip = styled(UncontrolledTooltip)`
 
 
 const About = () => (
-  <div id="about-section">
+  <section id="about-section">
     <h2 className="section-head">about</h2>
     <div className="about-body">
       <p>
@@ -169,7 +169,7 @@ const About = () => (
         <li>Bootstrap</li>
       </ul>
     </StyledToolTip>
-  </div>
+  </section>
 );
 
 export default About;

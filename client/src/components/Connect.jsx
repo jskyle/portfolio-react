@@ -1,7 +1,6 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable-next-line */
 import React, { useState } from 'react';
-import './styles/Connect.css';
 import {
   Form, Button, FormGroup, Input, Row, Col, Card,
 } from 'reactstrap';

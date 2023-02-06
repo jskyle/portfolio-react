@@ -1,8 +1,8 @@
 import React from "react";
-import "./App.css";
 import { Container } from "reactstrap";
 import { About, Connect, Work } from "./components/index";
 import Landing from "./components/Landing";
+import "./styles/fonts.css";
 
 const App = () => (
   <>
@@ -11,6 +11,9 @@ const App = () => (
       <About />
       <Work />
       {/* <Connect /> */}
+      <footer>
+        <p>Dream big. Do good.</p>
+      </footer>
     </Container>
   </>
 );

@@ -1,105 +1,19 @@
 /* eslint-disable-next-line */
 import React from 'react';
-import styled from 'styled-components';
-
-const LandingContainer = styled.div`
-  top: 0;
-  left: 0;
-  width: 100%;
-  height:  100%;
-  min-height: ${(props) => (props.secondary ? '75vh' : '100vh')};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  
-  div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: ${(props) => (props.secondary || props.start ? 'start' : 'center')
-  };
-
-    h2 {
-      font-size: 6rem;
-      text-align: left;
-    }
-
-  h6 {
-    font-size: 1.35rem;
-    padding-top: 0;
-    margin-top: 1.5rem;
-    letter-spacing: .2rem;
-  };
-
-  h5 {
-    text-align: left;
-    width: 100%;
-    font-size: 3rem;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-weight: 300;
-  };
-
-
-    h1 {
-      font-family: 'Manrope', sans-serif !important;
-      width: fit-content;
-      font-size: 10rem;
-      line-height: 0.85;
-      margin-top: 0px;
-      margin-bottom: 0px;
-      padding-left: 0px;
-      padding-bottom: 0px;
-      padding-top: 0px;
-    };
-    
-    @media screen and ( max-width: 1199px  ) {
-      h1 {
-        font-size: 8rem;
-      };
-    };
-  
-    @media screen and ( max-width: 991px) {
-      h1 {
-        font-size: 6rem;
-      };
-  
-    };
-  
-    @media screen and ( max-width: 767px) {
-      h1 {
-        font-size: 5rem;
-      };
-  
-    };
-  
-    @media screen and ( max-width: 549px) {
-      h1 {
-        font-size: 4rem;
-      };
-  
-    };
-  
-  
-    @media screen and ( max-width: 448px) {
-      h1 {
-        font-size: 3.5rem;
-      };
-  
-    };
-  }
-
-
-
-`;
 
 const Landing = () => {
   return (
-    <LandingContainer>
-      <h1>Kyle Kearney</h1>
-      <h6 className="sub-header rotate-1">ui engineer</h6>
-    </LandingContainer>
+    <div className="landing-container">
+      <div className="landing-text-container">
+        <div className="d-flex align-items-end justify-content-between">
+          <h1 className="landing-head">Kyle</h1>
+          <h2 className="landing-subhead extralight-font">
+            Full Stack Engineer
+          </h2>
+        </div>
+        <h1 className="landing-head">Kearney</h1>
+      </div>
+    </div>
   );
 };
 
