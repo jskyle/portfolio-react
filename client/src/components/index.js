@@ -1,5 +1,6 @@
 import About from "./About";
-import Connect from './Connect';
+import Landing from './Landing';
 import Work from './Work';
 
-export { About, Connect, Work };
+export { About, Landing, Work };
+

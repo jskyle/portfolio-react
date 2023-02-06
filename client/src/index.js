@@ -3,9 +3,10 @@
 /* eslint-disable-next-line */
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
+import "./styles/animations.css";
+import "./styles/fonts.css";
 import './styles/components.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';

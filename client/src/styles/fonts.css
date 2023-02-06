@@ -1,9 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+/* FONT */
+
+body {
+  margin: 0;
+  font-family: 'Manrope', sans-serif !important;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* FONT WEIGHTS */
+
+h1,
+h2,
+.extrabold-font {
+  font-weight: 800;
+}
+
+.bold-font {
+  font-weight: 700;
+}
+
+
+h5,
+h6,
+.medium-font {
+  font-weight: 500;
+}
+
+
+p, 
+.regular-font {
+font-weight: 400;
+}
+
+
+.light-font {
+  font-weight: 300;
+}
+
+h3,
+.extralight-font {
+  font-weight: 200;
+}
+
+
+/* END FONT WEIGHTS */
+
+/* DEFAULT FONT SIZES */
+
+h2 {
+ font-size: 64px;
+}
+
+h3 {
+ font-size: 48px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+p {
+    font-size: 16px;
+}
+
+
+
+/* END DEFAULT FONT SIZES  */
+
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.about-body p {
+  font-size: 24px;
+  line-height: 2;
+  margin-bottom: 28px;
+}
+
+.emoji {
+ font-size: 120%;
+}
+
+
 .landing-head {
     font-size: 400px;
     line-height: 0.95;
 }
 
 .landing-subhead {
-    font-size: 64px;
     line-height: 0;
+}
+
+.section-head {
+  letter-spacing: -3px;
+  margin-bottom: 24px;
+}
+
+.work-body {
+  letter-spacing: normal;
 }
