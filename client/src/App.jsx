@@ -11,11 +11,11 @@ import Landing from "./shared/Landing";
 const App = () => (
   <>
     <Landing />
-      <Container>
+    <Container>
       <About />
       <Work />
       {/* <Connect /> */}
-      </Container>
+    </Container>
   </>
 );
 
