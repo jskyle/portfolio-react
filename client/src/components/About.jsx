@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { UncontrolledTooltip } from "reactstrap";
-import { Emoji } from "../../../utils";
-import { TextSection } from "../../../shared";
+import { Emoji } from "../utils";
 
 const Bold = styled.strong`
   font-weight: 600;
@@ -53,7 +52,8 @@ const StyledToolTip = styled(UncontrolledTooltip)`
 
 const About = () => (
   <div id="about-section">
-    <TextSection title="about">
+    <h2 className="section-head">about</h2>
+    <div className="about-body">
       <p>
         Hi there! <Emoji symbol="👋 " label="wave" id="cliche-wave" />
         My name is Kyle Kearney! I am a <Bold>front end engineer</Bold>,
@@ -128,7 +128,7 @@ const About = () => (
         .
       </p>
       <p>Dream big, do good.</p>
-    </TextSection>
+    </div>
     <StyledToolTip placement="top" target="cliche-wave">
       <span>Cliche wave emoji!</span>
     </StyledToolTip>

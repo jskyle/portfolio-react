@@ -10,7 +10,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub, faInstagram, faTwitter, faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
-import { SocialRow } from "../../../shared";
+import SocialRow from "./SocialRow";
 
 const Connect = () => {
   const [formState, setFormState] = useState({
