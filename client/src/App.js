@@ -6,9 +6,6 @@ import { Home } from "./pages"
 
 
 
-const App = () => {
-
-  return (<Home />)
-};
+const App = () => (<Home />);
 
 export default App;

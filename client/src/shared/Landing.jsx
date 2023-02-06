@@ -1,7 +1,6 @@
 /* eslint-disable-next-line */
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 const LandingContainer = styled.div`
   top: 0;
@@ -18,7 +17,8 @@ const LandingContainer = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: ${(props) => (props.secondary || props.start ? 'start' : 'center')};
+    align-items: ${(props) => (props.secondary || props.start ? 'start' : 'center')
+  };
 
     h2 {
       font-size: 6rem;
@@ -94,21 +94,14 @@ const LandingContainer = styled.div`
 
 `;
 
-const Landing = ({ children, secondary, start }) => {
-  const secondary_ = secondary ? "true" : "";
-  const start_ = start ? "true" : "";
-
+const Landing = () => {
   return (
-      <LandingContainer secondary={secondary_} start={start_}>
-        <div>
-          {children}
-        </div>
-      </LandingContainer>
+    <LandingContainer>
+      <h1>Kyle Kearney</h1>
+      <h6 className="sub-header rotate-1">ui engineer</h6>
+    </LandingContainer>
   );
 };
 
-Landing.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default Landing;

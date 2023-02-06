@@ -17,13 +17,10 @@ const Home = () => {
 
   return (
     <>
-      <Landing type="home">
-        <h1>Kyle Kearney</h1>
-        <h6 className="sub-header rotate-1">ui engineer</h6>
-      </Landing>
+    <Landing/>
       <StyledContainer>
         <About />
-        <Work/>
+        <Work />
         {/* <Connect /> */}
       </StyledContainer>
     </>
