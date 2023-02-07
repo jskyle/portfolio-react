@@ -20,7 +20,7 @@ export const workHistory = [
         company: "Splunk",
         timeline: "January, 2022 - July, 2022",
         technologies: "AEM, Javascript, HTML, CSS",
-        description: ".conf is Splunk’s largest marketing event. With ticket sales and sponsor spots generating millions in revenue, the pressure to perform was palpable. Coming off the pandemic, .conf22 poised a special challenge as we had to support both in-person and virtual attendance. I was tasked with produce the marketing site for the event. From sponsor and speaker details to event schedules and keynote streaming all was managed on the site. Our main focus for the event was user-friendly. Whether on their phone at the event or they were in Asia watching replays, we had to deliver.",
+        description: ".conf is Splunk’s largest marketing event. With attendee ticket and sponsor revenue generating millions, the pressure to perform was palpable. Coming off the pandemic, .conf22 poised a special challenge as we had to support both in-person and virtual attendance. I was tasked with produce the marketing site for the event. From sponsor and speaker details to event schedules and keynote streaming all was managed on the site. Our main focus for the event was user-friendly. Whether on their phone at the event or they were in Asia watching replays, we had to deliver.",
         images: [
             {
                 imageURL: "",

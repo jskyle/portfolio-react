@@ -73,3 +73,33 @@ footer {
 section {
   margin-bottom: 64px;
 }
+
+.work-history-container .work-object-row {
+  margin-bottom: 24px;
+}
+
+.work-history-container .work-object-row:last-child {
+  margin-bottom: 0px;
+}
+
+.work-history-container .work-object-row:nth-child(even) {
+  flex-direction: row-reverse;
+  justify-content: end;
+  text-align: end;
+}
+
+.work-history-container .work-object-row:nth-child(even) .work-object-info-row {
+  justify-content: end;
+}
+
+.work-object-info-row {
+  margin-left: 0px;
+  margin-bottom: 12px;
+}
+.work-object-info-row h6 {
+  margin-right: 15px;
+}
+
+.work-object-row {
+  margin-left: 0px;
+}
