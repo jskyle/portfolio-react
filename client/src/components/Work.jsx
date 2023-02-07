@@ -1,5 +1,6 @@
 import React from 'react';
 import WorkObject from './WorkObject';
+import { workHistory } from "../utils/content";
 
 const Work = () => {
   
@@ -10,7 +11,10 @@ const Work = () => {
       </div>
 
     <div className='work-history-container'>
-      <WorkObject/>
+      {workHistory.map((project) => { 
+        return (
+          <WorkObject project={project}/>
+        )})}
     </div>
   </section>
 )};

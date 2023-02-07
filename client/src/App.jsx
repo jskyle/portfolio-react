@@ -6,13 +6,13 @@ import { About, Landing, Work } from "./components";
 const App = () => (
   <>
     <Landing />
-    {/* <Container>
+    <Container>
       <About />
       <Work />
       <footer>
         <p>Dream big. Do good.</p>
       </footer>
-    </Container> */}
+    </Container>
   </>
 );
 
