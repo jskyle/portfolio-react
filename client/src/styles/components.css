@@ -75,7 +75,8 @@ section {
 }
 
 .work-history-container .work-object-row {
-  margin-bottom: 24px;
+  margin-bottom: 60px;
+  display: flex;
 }
 
 .work-history-container .work-object-row:last-child {

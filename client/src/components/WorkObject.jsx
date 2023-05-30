@@ -24,8 +24,12 @@ const WorkObject = ({ project }) => {
           </h6>
         </div>
         <p className="work-body">{project.description}</p>
-        <div className="col-lg-4"></div>
       </div>
+        <div className="col-lg-4">
+          <div>
+            <img src="https://placehold.co/200x400" alt="" />
+          </div>
+        </div>
     </div>
   );
 };
